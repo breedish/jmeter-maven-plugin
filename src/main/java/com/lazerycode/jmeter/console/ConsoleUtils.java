@@ -1,11 +1,30 @@
 package com.lazerycode.jmeter.console;
 
+import org.apache.maven.plugin.logging.Log;
+
+import java.util.List;
+
 /**
- * Created with IntelliJ IDEA.
- * User: zenind
- * Date: 10/31/12
- * Time: 12:17 AM
- * To change this template use File | Settings | File Templates.
+ * Console Utils class.
  */
-public class ConsoleUtils {
+public final class ConsoleUtils {
+
+    public static void showTestsInfo(Log log, String message, List<String> tests) {
+        log.info(" ");
+        log.info("-------------------------------------------------------");
+        log.info(String.format(" \t %s", message));
+        log.info("-------------------------------------------------------");
+        log.info(" ");
+
+        int testIndex = 1;
+        for (String test : tests) {
+            log.info(String.format("\t%d .\t %s", testIndex, test));
+            testIndex++;
+        }
+    }
+
+    public static void log(Log log, String message) {
+        log.info(message);
+    }
+
 }

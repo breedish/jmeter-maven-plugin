@@ -1,11 +1,13 @@
 package com.lazerycode.jmeter;
 
-import java.io.File;
-import java.util.List;
-
+import com.google.common.collect.Lists;
+import com.lazerycode.jmeter.console.ConsoleUtils;
+import com.lazerycode.jmeter.testrunner.TestManager;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
-import com.lazerycode.jmeter.testrunner.TestManager;
+
+import java.io.File;
+import java.util.List;
 
 /**
  * JMeter Maven plugin.
@@ -58,12 +60,12 @@ public class JMeterMojo extends JMeterAbstractMojo {
         ErrorScanner scanner = new ErrorScanner(this.ignoreResultErrors, this.ignoreResultFailures, getLog());
         int totalErrorCount = 0;
         int totalFailureCount = 0;
-        boolean failed = false;
+        List<String> failedTests = Lists.newArrayList();
         for (String file : results) {
             if (!scanner.hasTestPassed(new File(file))) {
                 totalErrorCount += scanner.getErrorCount();
                 totalFailureCount += scanner.getFailureCount();
-                failed = true;
+                failedTests.add(file);
             }
         }
         getLog().info(" ");
@@ -71,7 +73,8 @@ public class JMeterMojo extends JMeterAbstractMojo {
         getLog().info(" ");
         getLog().info("Tests Run: " + results.size() + ", Failures: " + totalFailureCount + ", Errors: " + totalErrorCount + "");
         getLog().info(" ");
-        if (failed) {
+        if (!failedTests.isEmpty()) {
+            ConsoleUtils.showTestsInfo(getLog(), "F A I L E D  T E S T S", failedTests);
             throw new MojoFailureException("There were " + totalErrorCount + " test errors " + "and " + totalFailureCount + " test failures.  See the JMeter logs for details.");
         }
     }

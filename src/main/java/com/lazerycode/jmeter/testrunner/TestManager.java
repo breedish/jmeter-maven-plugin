@@ -3,6 +3,7 @@ package com.lazerycode.jmeter.testrunner;
 import com.lazerycode.jmeter.*;
 import com.lazerycode.jmeter.configuration.JMeterArgumentsArray;
 import com.lazerycode.jmeter.configuration.RemoteConfiguration;
+import com.lazerycode.jmeter.console.ConsoleUtils;
 import com.lazerycode.jmeter.threadhandling.ExitException;
 import org.apache.commons.io.output.NullOutputStream;
 import org.apache.jmeter.NewDriver;
@@ -64,6 +65,9 @@ public class TestManager extends JMeterMojo {
     public List<String> executeTests() throws MojoExecutionException {
         List<String> tests = generateTestList();
         List<String> results = new ArrayList<String>();
+
+        logTestExecutionSequence(tests);
+
         for (String file : tests) {
             if (!this.remoteStartAndStopOnce || tests.get(tests.size() - 1).equals(file)) {
                 testArgs.setRemoteStop(this.remoteStop);
@@ -75,6 +79,10 @@ public class TestManager extends JMeterMojo {
             results.add(executeSingleTest(new File(testFilesDirectory, file)));
         }
         return results;
+    }
+
+    private void logTestExecutionSequence(List<String> tests) {
+        ConsoleUtils.showTestsInfo(getLog(), "T E S T S   E X E C U T I O N   S E Q U E N C E ", tests);
     }
 
     //=============================================================================================

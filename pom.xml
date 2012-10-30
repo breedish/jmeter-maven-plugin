@@ -231,6 +231,11 @@
             <artifactId>ApacheJMeter_config</artifactId>
             <version>${jmeter.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>13.0.1</version>
+        </dependency>
     </dependencies>
 
     <build>
