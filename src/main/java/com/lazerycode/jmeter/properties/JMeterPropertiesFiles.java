@@ -22,6 +22,7 @@ public enum JMeterPropertiesFiles {
     }
 
     public String getPropertiesFileName() {
+
         return (String) this.propertiesData[0];
     }
 
