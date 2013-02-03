@@ -51,7 +51,7 @@ Basic Usage
 * Add the plugin to the build section of your pom's project :
 
 		<plugin>
-			<groupId>com.lazerycode.jmeter</groupId>
+			<groupId>com.breedish.jmeter</groupId>
 			<artifactId>jmeter-maven-plugin</artifactId>
 			<version>1.4.1</version>
 			<executions>
