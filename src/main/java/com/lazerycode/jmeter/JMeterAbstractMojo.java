@@ -222,7 +222,7 @@ public abstract class JMeterAbstractMojo extends AbstractMojo {
      * Generate the directory tree utilised by JMeter.
      */
     protected void generateJMeterDirectoryTree() {
-        this.logsDir = new File(this.workDir,"logs");
+        this.logsDir = new File(this.workDir,"executorLogs");
         this.logsDir.mkdirs();
         this.binDir = new File(this.workDir, "bin");
         this.binDir.mkdirs();

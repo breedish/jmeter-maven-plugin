@@ -13,7 +13,7 @@ import java.util.List;
  * JMeter Maven plugin.
  *
  * @author Tim McCune
- * @goal jmeter
+ * @goal jmeter-mojo
  * @requiresProject true
  */
 @SuppressWarnings("JavaDoc")
@@ -75,7 +75,7 @@ public class JMeterMojo extends JMeterAbstractMojo {
         getLog().info(" ");
         if (!failedTests.isEmpty()) {
             ConsoleUtils.showTestsInfo(getLog(), "F A I L E D  T E S T S", failedTests);
-            throw new MojoFailureException("There were " + totalErrorCount + " test errors " + "and " + totalFailureCount + " test failures.  See the JMeter logs for details.");
+            throw new MojoFailureException("There were " + totalErrorCount + " test errors " + "and " + totalFailureCount + " test failures.  See the JMeter executorLogs for details.");
         }
     }
 }
