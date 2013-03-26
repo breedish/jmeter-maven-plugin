@@ -21,6 +21,9 @@ public class JmeterCLConfigConverter {
         options.add(JmeterCLOption.LOGFILE_OPT.getCLOption());
         options.add(config.getLogsHome() + File.pathSeparator + test.getName() + ".jtl");
 
+        options.add(JmeterCLOption.JMLOGFILE_OPT.getCLOption());
+        options.add(config.getLogsHome() + File.pathSeparator + test.getName() + ".log");
+
         options.add(JmeterCLOption.JMETER_HOME_OPT.getCLOption());
         options.add(config.getExecutorHome().getAbsolutePath());
 
