@@ -1,6 +1,9 @@
 package com.mtvi.arc.config;
 
 import java.io.File;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * ExecutionConfig.
@@ -13,7 +16,12 @@ public class ExecutionConfig {
 
     private final File logsHome;
 
-    public ExecutionConfig(File sourcePath, File executorHome, File logsHome) {
+    private final Map<String, String> systemProperties;
+
+    private final Map<String, String> jmeterProperties;
+
+    public ExecutionConfig(File sourcePath, File executorHome, File logsHome,
+        Map<String, String> systemProperties, Map<String, String> jmeterProperties) {
         if (sourcePath == null || executorHome == null || logsHome == null) {
             throw new IllegalArgumentException(
                     String.format("Null or blank value has been passed in as required argument, "
@@ -22,6 +30,8 @@ public class ExecutionConfig {
         this.sourcePath = sourcePath;
         this.executorHome = executorHome;
         this.logsHome = logsHome;
+        this.systemProperties = systemProperties != null ? systemProperties : new HashMap<String, String>();
+        this.jmeterProperties = jmeterProperties != null ? jmeterProperties : new HashMap<String, String>();
     }
 
     public File getSourcePath() {
@@ -34,5 +44,13 @@ public class ExecutionConfig {
 
     public File getLogsHome() {
         return logsHome;
+    }
+
+    public Map<String, String> getSystemProperties() {
+        return Collections.unmodifiableMap(systemProperties);
+    }
+
+    public Map<String, String> getJmeterProperties() {
+        return Collections.unmodifiableMap(jmeterProperties);
     }
 }

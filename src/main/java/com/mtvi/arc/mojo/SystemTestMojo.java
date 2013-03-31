@@ -12,6 +12,7 @@ import org.apache.maven.plugin.MojoFailureException;
 import org.apache.maven.project.MavenProject;
 
 import java.io.File;
+import java.util.Map;
 
 /**
  * JMeter Maven plugin.
@@ -51,7 +52,7 @@ public class SystemTestMojo extends AbstractMojo {
      *
      * @parameter
      */
-    protected File customProdpertiesFile;
+    protected File customPropertiesFile;
 
     /**
      * Suppress JMeter output
@@ -74,20 +75,71 @@ public class SystemTestMojo extends AbstractMojo {
      */
     protected transient File workDir;
 
+    /**
+     * Absolute path to JMeter custom (test dependent) properties file.
+     * .
+     *
+     * @parameter
+     */
+    protected Map<String, String> propertiesJMeter;
+
+    /**
+     * JMeter Properties that are merged with precedence into default JMeter file in saveservice.properties
+     *
+     * @parameter
+     */
+    protected Map<String, String> propertiesSaveService;
+
+    /**
+     * JMeter Properties that are merged with precedence into default JMeter file in upgrade.properties
+     *
+     * @parameter
+     * @description JMeter Properties that are merged with precedence into default JMeter file in 'upgrade.properties'.
+     */
+    protected Map<String, String> propertiesUpgrade;
+
+    /**
+     * JMeter Properties that are merged with precedence into default JMeter file in user.properties
+     * user.properties takes precedence over jmeter.properties
+     *
+     * @parameter
+     * @description JMeter Properties that are merged with precedence into default JMeter file in 'user.properties'
+     * user.properties takes precedence over 'jmeter.properties'.
+     */
+    protected Map<String, String> propertiesUser;
+
+    /**
+     * JMeter Global Properties that override those given in jmeterProps. <br>
+     * This sets local and remote properties (JMeter's definition of global properties is actually remote properties)
+     * and overrides any local/remote properties already set
+     *
+     * @description JMeter Global Properties that override those given in jmeterProps. <br>
+     * This sets local and remote properties (JMeter's definition of global properties is actually remote properties)
+     * and overrides any local/remote properties already set.
+     *
+     */
+    protected Map<String, String> propertiesGlobal;
+
+    /**
+     * (Java) System properties set for the test run.
+     * Properties are merged with precedence into default JMeter file system.properties
+     *
+     * @parameter Java merged with precedence into default JMeter file system.properties.
+     */
+    protected Map<String, String> propertiesSystem;
+
 
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
         SystemTestManager manager = new DefaultSystemTestManager();
 
-        ExecutionConfig config = new ExecutionConfig(this.sourcePath, this.executorHome, this.executorLogs);
+        ExecutionConfig config = new ExecutionConfig(this.sourcePath, this.executorHome,
+            this.executorLogs, this.propertiesSystem, this.propertiesJMeter);
 
         SystemTestRunner runner = new JmeterTestRunner();
 
         try {
             runner.execute(manager, config);
-            System.out.println(sourcePath);
-            System.out.println(executorLogs);
-            System.out.println(executorHome);
         } catch (TestExecutionException e) {
             throw new MojoExecutionException("Error during system test execution.", e);
         }

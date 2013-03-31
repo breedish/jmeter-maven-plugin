@@ -1,18 +1,21 @@
 package com.mtvi.arc.runner;
 
-import com.lazerycode.jmeter.threadhandling.JMeterPluginSecurityManager;
+import com.google.common.io.NullOutputStream;
+import com.lazerycode.jmeter.UtilityFunctions;
 import com.lazerycode.jmeter.threadhandling.JMeterPluginUncaughtExceptionHandler;
 import com.mtvi.arc.config.ExecutionConfig;
 import com.mtvi.arc.domain.SystemTest;
 import com.mtvi.arc.domain.SystemTestManager;
 import com.mtvi.arc.domain.SystemTestResult;
 import com.mtvi.arc.domain.TestExecutionException;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.apache.jmeter.NewDriver;
+import org.apache.jmeter.JMeter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
+import java.io.PrintStream;
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -20,13 +23,14 @@ import java.util.Set;
  */
 public class JmeterTestRunner implements SystemTestRunner {
 
-    private static final Log LOGGER = LogFactory.getLog(JmeterTestRunner.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(JmeterTestRunner.class);
 
     private final JmeterCLConfigConverter configConverter = new JmeterCLConfigConverter();
 
     @Override
     public ExecutionResult execute(SystemTestManager testManager, ExecutionConfig config)
         throws TestExecutionException {
+        configureEnvironment(config);
 
         Set<SystemTest> suite = testManager.findSystemTests(config);
 
@@ -35,61 +39,82 @@ public class JmeterTestRunner implements SystemTestRunner {
         return doExecution(suite, config);
     }
 
-    protected ExecutionResult doExecution(Set<SystemTest> suite, ExecutionConfig config) {
-        ExecutionResult executionResult = new ExecutionResult();
+    private void configureEnvironment(ExecutionConfig config) {
+        config.getLogsHome().mkdirs();
 
         //empty classpath, JMeter will automatically assemble and add all JARs in #libDir and #libExtDir and add them to the classpath. Otherwise all jars will be in the classpath twice.
-//        System.setProperty("java.class.path", "");
+        System.setProperty("java.class.path", "");
 
         //JMeter uses the system property "user.dir" to set its base working directory
         System.setProperty("user.dir", new File(config.getExecutorHome().getAbsolutePath(), "bin").getAbsolutePath());
+
         //Prevent JMeter from throwing some System.exit() calls
         System.setProperty("jmeterengine.remote.system.exit", "false");
         System.setProperty("jmeterengine.stopfail.system.exit", "false");
 
-//        System.setProperty("jmeter.home", config.getExecutorHome().getAbsolutePath());
-//        overrideSecurityManager();
-//        overrideUncaughtExceptionHandler();
+        System.setProperty("jmeter.home", config.getExecutorHome().getAbsolutePath());
+    }
 
+    protected ExecutionResult doExecution(Set<SystemTest> suite, ExecutionConfig config) {
+        ExecutionResult executionResult = new ExecutionResult();
+
+        PrintStream initialPrintStream = System.out;
+        System.setOut(new PrintStream(new NullOutputStream()));
+
+        JMeter jmeter = new JMeter();
+        long startTime = System.currentTimeMillis();
+        int suiteSize = suite.size();
+        int order = 1;
         for (SystemTest test : suite) {
-            Date startDate = new Date();
-            LOGGER.info(String.format("\t Execution of \"%s\" started.", test.getName()));
-            NewDriver.main(configConverter.prepareConfig(config, test));
-            LOGGER.info(String.format("\t Execution of \"%s\" finished.", test.getName()));
-            Date endDate = new Date();
-            executionResult.bindResult(new SystemTestResult(test, startDate, endDate, new File(config.getLogsHome(), test.getName() + ".jtl")));
+            try {
+                Date startDate = new Date();
+                LOGGER.info("{}/{} Execution of \"{}\" started.", order, suiteSize, test.getName());
+
+                jmeter.start(configConverter.prepareConfig(config, test));
+//                NewDriver.main(configConverter.prepareConfig(config, test));
+                Date endDate = new Date();
+                executionResult.bindResult(new SystemTestResult(test, startDate, endDate, new File(config.getLogsHome(), test.getName() + ".jtl")));
+                waitForTestToFinish(UtilityFunctions.getThreadNames(false));
+            } catch (Throwable e) {
+                LOGGER.error("Error during running \"{}\" test ", test.getName(), e);
+            } finally {
+                LOGGER.info("\t Finished .");
+                order++;
+            }
         }
+
+        LOGGER.info("Test Suite was executed in {} millis", (System.currentTimeMillis() - startTime));
+        System.setOut(initialPrintStream);
 
         return executionResult;
     }
 
     /**
-     * Capture System.exit commands so that we can check to see if JMeter is trying to kill us without warning.
-     *
-     * @return old SecurityManager so that we can switch back to normal behaviour.
+     * Wait for one of the JMeterThreads in the list to stop.
      */
-    protected SecurityManager overrideSecurityManager() {
-        SecurityManager oldManager = System.getSecurityManager();
-        System.setSecurityManager(new JMeterPluginSecurityManager());
-        return oldManager;
+    protected void waitForTestToFinish(List<String> threadNames) throws InterruptedException {
+        Thread waitThread = null;
+        Set<Thread> threadSet = Thread.getAllStackTraces().keySet();
+        for (Thread thread : threadSet) {
+            for (String threadName : threadNames) {
+                if (threadName.equals(thread.getName())) {
+                    waitThread = thread;
+                    break;
+                }
+            }
+        }
+        if (waitThread != null) {
+            waitThread.setUncaughtExceptionHandler(new JMeterPluginUncaughtExceptionHandler());
+            waitThread.join();
+        }
     }
 
-    /**
-     * Override System.exit(0) to ensure JMeter doesn't kill us without warning.
-     *
-     * @return old UncaughtExceptionHandler so that we can switch back to normal behaviour.
-     */
-    protected Thread.UncaughtExceptionHandler overrideUncaughtExceptionHandler() {
-        Thread.UncaughtExceptionHandler oldHandler = Thread.getDefaultUncaughtExceptionHandler();
-        Thread.setDefaultUncaughtExceptionHandler(new JMeterPluginUncaughtExceptionHandler());
-        return oldHandler;
-    }
 
     private void printTestSuite(Set<SystemTest> runSuite) {
         LOGGER.info("System Test Execution Sequence:");
         int order = 0;
         for (SystemTest test : runSuite) {
-            LOGGER.info(String.format("%d. %s - %s", ++order, test.getName(), test.getPath().getAbsolutePath()));
+            LOGGER.info("{}. {} \t {}", ++order, test.getName(), test.getPath().getAbsolutePath());
         }
     }
 }
