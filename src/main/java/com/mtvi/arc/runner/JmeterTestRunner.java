@@ -16,7 +16,12 @@ import java.io.File;
 import java.io.PrintStream;
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 import java.util.Set;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 /**
  * JmeterTestRunner.
@@ -58,8 +63,39 @@ public class JmeterTestRunner implements SystemTestRunner {
     protected ExecutionResult doExecution(Set<SystemTest> suite, ExecutionConfig config) {
         ExecutionResult executionResult = new ExecutionResult();
 
-        PrintStream initialPrintStream = System.out;
+        final PrintStream initialPrintStream = System.out;
         System.setOut(new PrintStream(new NullOutputStream()));
+
+        final CountDownLatch latch = new CountDownLatch(1);
+
+        ExecutorService service = Executors.newFixedThreadPool(2);
+
+        service.submit(new Runnable() {
+            @Override
+            public void run() {
+                Scanner scanner = new Scanner(System.in);
+
+                boolean showOutput = false;
+                while(latch.getCount() > 0) {
+                    try {
+                        if (scanner.hasNext() && scanner.next().equalsIgnoreCase("o")) {
+                            showOutput = !showOutput;
+                        }
+
+                        if (showOutput) {
+                            System.setOut(initialPrintStream);
+                        } else {
+                            System.setOut(new PrintStream(new NullOutputStream()));
+                        }
+
+                        TimeUnit.SECONDS.sleep(1);
+                    } catch(Exception e) {
+                        e.printStackTrace();
+                    }
+
+                }
+            }
+        });
 
         JMeter jmeter = new JMeter();
         long startTime = System.currentTimeMillis();
@@ -85,6 +121,9 @@ public class JmeterTestRunner implements SystemTestRunner {
 
         LOGGER.info("Test Suite was executed in {} millis", (System.currentTimeMillis() - startTime));
         System.setOut(initialPrintStream);
+        latch.countDown();
+
+        service.shutdownNow();
 
         return executionResult;
     }
