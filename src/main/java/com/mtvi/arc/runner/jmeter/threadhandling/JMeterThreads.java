@@ -1,4 +1,4 @@
-package com.lazerycode.jmeter.threadhandling;
+package com.mtvi.arc.runner.jmeter.threadhandling;
 
 /**
  * Thread names added to this list will be used when scanning JMeterThreads directly after JMeter is called

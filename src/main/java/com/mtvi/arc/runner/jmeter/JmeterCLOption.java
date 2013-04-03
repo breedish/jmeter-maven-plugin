@@ -1,4 +1,4 @@
-package com.mtvi.arc.runner;
+package com.mtvi.arc.runner.jmeter;
 
 /**
  * Jmeter Command Line Options/Arguments.

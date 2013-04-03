@@ -1,4 +1,4 @@
-package com.mtvi.arc.runner;
+package com.mtvi.arc.runner.jmeter;
 
 import com.mtvi.arc.config.ExecutionConfig;
 import com.mtvi.arc.domain.SystemTest;

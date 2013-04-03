@@ -50,20 +50,32 @@ Basic Usage
 
 * Add the plugin to the build section of your pom's project :
 
-		<plugin>
-			<groupId>com.lazerycode.jmeter</groupId>
-			<artifactId>jmeter-maven-plugin</artifactId>
-			<version>1.4.1</version>
-			<executions>
-				<execution>
-					<id>jmeter-tests</id>
-					<phase>verify</phase>
-					<goals>
-						<goal>jmeter</goal>
-					</goals>
-			   </execution>
-			</executions>
-		</plugin>
+    <plugin>
+        <groupId>com.mtvi.arc</groupId>
+        <artifactId>jmeter-maven-plugin</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <configuration>
+            <executorHome>${project.build.directory}/jmeter</executorHome>
+            <executorLogs>${project.build.directory}/jmeter-results</executorLogs>
+            <sourcePath>${jmeter.common.int.tests.path}</sourcePath>
+        </configuration>
+        <executions>
+            <execution>
+                <id>jmeter</id>
+                <phase>integration-test</phase>
+                <goals>
+                    <goal>jmeter</goal>
+                </goals>
+            </execution>
+            <!--<execution>-->
+                <!--<id>jmeter-check-results</id>-->
+                <!--<phase>verify</phase>-->
+                <!--<goals>-->
+                    <!--<goal>check-multiple</goal>-->
+                <!--</goals>-->
+            <!--</execution>-->
+        </executions>
+    </plugin>
 
 ### Reference JMX files
 

@@ -54,4 +54,5 @@ public class SystemTestResult {
     public File getRawResult() {
         return rawResult;
     }
+
 }

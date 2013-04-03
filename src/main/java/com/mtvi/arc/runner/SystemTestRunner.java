@@ -1,7 +1,5 @@
 package com.mtvi.arc.runner;
 
-import com.mtvi.arc.config.ExecutionConfig;
-import com.mtvi.arc.domain.SystemTestManager;
 import com.mtvi.arc.domain.TestExecutionException;
 
 /**
@@ -9,6 +7,6 @@ import com.mtvi.arc.domain.TestExecutionException;
  */
 public interface SystemTestRunner {
 
-    ExecutionResult execute(SystemTestManager testManager, ExecutionConfig config) throws TestExecutionException;
+    ExecutionResult execute() throws TestExecutionException;
 
 }

@@ -1,4 +1,4 @@
-package com.lazerycode.jmeter.threadhandling;
+package com.mtvi.arc.runner.jmeter.threadhandling;
 
 import java.security.Permission;
 
