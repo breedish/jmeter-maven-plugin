@@ -14,8 +14,14 @@ import java.util.Set;
  */
 public class DefaultSystemTestManager implements SystemTestManager {
 
+    /**
+     * Tests Scanner.
+     */
     private final SystemTestScanner systemTestScanner;
 
+    /**
+     * Default Constructor.
+     */
     public DefaultSystemTestManager() {
         this.systemTestScanner = new ByExtensionSystemTestScanner();
     }

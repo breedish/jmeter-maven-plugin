@@ -15,6 +15,8 @@ public class ExecutionResult {
 
     private final Date startDate;
 
+    private Date endDate;
+
     public ExecutionResult() {
         this.executionResults = new LinkedHashSet<SystemTestResult>();
         this.startDate = new Date();
@@ -26,4 +28,15 @@ public class ExecutionResult {
         }
     }
 
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
+    }
+
+    public Set<SystemTestResult> getExecutionResults() {
+        return executionResults;
+    }
+
+    public Date getStartDate() {
+        return startDate;
+    }
 }

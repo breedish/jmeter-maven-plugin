@@ -14,7 +14,7 @@ public class ExecutionConfig {
 
     private final File executorHome;
 
-    private final File logsHome;
+    private final File resultsPath;
 
     private final Map<String, String> systemProperties;
 
@@ -22,16 +22,16 @@ public class ExecutionConfig {
 
     private boolean showOutput;
 
-    public ExecutionConfig(File sourcePath, File executorHome, File logsHome,
+    public ExecutionConfig(File sourcePath, File executorHome, File resultsPath,
         Map<String, String> systemProperties, Map<String, String> jmeterProperties, boolean showOutput) {
-        if (sourcePath == null || executorHome == null || logsHome == null) {
+        if (sourcePath == null || executorHome == null || resultsPath == null) {
             throw new IllegalArgumentException(
                     String.format("Null or blank value has been passed in as required argument, "
-                        + "[sourcePath=%s, executorHome=%s, logsHome=%s]", sourcePath, executorHome, logsHome));
+                        + "[sources=%s, jmeterHome=%s, resultsPath=%s]", sourcePath, executorHome, resultsPath));
         }
         this.sourcePath = sourcePath;
         this.executorHome = executorHome;
-        this.logsHome = logsHome;
+        this.resultsPath = resultsPath;
         this.systemProperties = systemProperties != null ? systemProperties : new HashMap<String, String>();
         this.jmeterProperties = jmeterProperties != null ? jmeterProperties : new HashMap<String, String>();
         this.showOutput = showOutput;
@@ -45,8 +45,8 @@ public class ExecutionConfig {
         return executorHome;
     }
 
-    public File getLogsHome() {
-        return logsHome;
+    public File getResultsPath() {
+        return resultsPath;
     }
 
     public Map<String, String> getSystemProperties() {

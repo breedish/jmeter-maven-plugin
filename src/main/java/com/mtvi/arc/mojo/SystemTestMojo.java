@@ -2,9 +2,8 @@ package com.mtvi.arc.mojo;
 
 import com.mtvi.arc.config.ExecutionConfig;
 import com.mtvi.arc.domain.DefaultSystemTestManager;
-import com.mtvi.arc.domain.SystemTestManager;
-import com.mtvi.arc.runner.jmeter.JmeterTestRunner;
 import com.mtvi.arc.runner.SystemTestRunner;
+import com.mtvi.arc.runner.jmeter.JmeterTestRunner;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
@@ -40,26 +39,26 @@ public class SystemTestMojo extends AbstractMojo {
     /**
      * Path where all source test files are located.
      *
-     * @parameter expression="${jmeter.testfiles.basedir}"
-     * default-value="${basedir}/target/jmeter-it"
+     * @parameter
+     * @required
      */
-    protected File sourcePath;
+    protected File sources;
 
     /**
      * Path under which JMX files are stored.
      *
-     * @parameter expression="${jmeter.testfiles.basedir}"
-     * default-value="${basedir}/target/jmeter"
+     * @parameter
+     * @required
      */
-    protected File executorHome;
+    protected File jmeterHome;
 
     /**
      * Path under which JMX files are stored.
      *
-     * @parameter expression="${jmeter.testfiles.basedir}"
-     * default-value="${basedir}/target/jmeter-results"
+     * @parameter
+     * @required
      */
-    protected File executorLogs;
+    protected File resultsDir;
 
     /**
      * Suppress JMeter output.
@@ -71,7 +70,6 @@ public class SystemTestMojo extends AbstractMojo {
     /**
      * JMeter properties set for the test run.
      * .
-     *
      * @parameter
      */
     protected Map<String, String> propertiesJMeter;
@@ -79,24 +77,31 @@ public class SystemTestMojo extends AbstractMojo {
     /**
      * (Java) System properties set for the test run.
      *
-     * @parameter Java merged with precedence into default JMeter file system.properties.
+     * @parameter
      */
     protected Map<String, String> propertiesSystem;
 
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
-        SystemTestManager manager = new DefaultSystemTestManager();
-
-        ExecutionConfig config = new ExecutionConfig(this.sourcePath, this.executorHome,
-            this.executorLogs, this.propertiesSystem, this.propertiesJMeter, this.showOutput);
-
-        SystemTestRunner runner = new JmeterTestRunner(config, manager);
         try {
+            ExecutionConfig config = new ExecutionConfig(this.sources, this.jmeterHome,
+                this.resultsDir, this.propertiesSystem, this.propertiesJMeter, this.showOutput);
+
+            initEnvironment(config);
+
+            SystemTestRunner runner = new JmeterTestRunner(config, new DefaultSystemTestManager());
             runner.execute();
         } catch (Throwable e) {
-            LOG.error("Error during build", e);
+            LOG.error("Error during build:", e);
             throw new MojoExecutionException("Error during system test execution.", e);
         }
+    }
 
+    private void initEnvironment(ExecutionConfig config) throws MojoExecutionException {
+        if (!config.getResultsPath().mkdirs()) {
+            throw new MojoExecutionException(
+                String.format("Unable to create JMeter results directory %s",
+                    config.getResultsPath().getAbsolutePath()));
+        }
     }
 }
