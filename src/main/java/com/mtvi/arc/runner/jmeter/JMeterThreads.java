@@ -39,12 +39,12 @@ public enum JMeterThreads {
      * Private constructor.
      *
      * @param threadName - thread name.
-     * @param guiThread - flag for gui thread indication.
+     * @param guiThread  - flag for gui thread indication.
      */
     private JMeterThreads(String threadName, boolean guiThread) {
         if (threadName == null) {
             throw new IllegalArgumentException(String.format(
-                "Null or blank or wrong value has been passed in as required argument [threadName=%s]", threadName));
+                    "Null or blank or wrong value has been passed in as required argument [threadName=%s]", threadName));
         }
 
         this.threadName = threadName;
