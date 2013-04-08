@@ -40,6 +40,32 @@
                         </#list>
                     </tbody>
                 </table>
+            <div class="accordion" id="accordion2">
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                            Collapsible Group Item #1
+                        </a>
+                    </div>
+                    <div id="collapseOne" class="accordion-body collapse in">
+                        <div class="accordion-inner">
+                            Anim pariatur cliche...
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                            Collapsible Group Item #2
+                        </a>
+                    </div>
+                    <div id="collapseTwo" class="accordion-body collapse">
+                        <div class="accordion-inner">
+                            Anim pariatur cliche...
+                        </div>
+                    </div>
+                </div>
+            </div>
                 <section class="row" id="detailed-results" style="padding: 0 40px">
                     <#list result.executionResults as test>
                         <div id="${test.test.name}" class="modal hide fade" style="width:90%;margin-left:0px;left:5%;" tabindex="-1" role="dialog" aria-labelledby="modal_header_${test.test.name}_${test_index}" aria-hidden="true">
@@ -49,24 +75,24 @@
                             </div>
                             <div class="modal-body" style="height:1000px;overflow:scroll">
                                 hhhhhh
-                                <div class="accordion collapse" id="details_${test.test.name}">
                                     <#list test.explain.samples as sample>
+                                    <div class="accordion collapse" id="explain_call_detailed_${test.test.name}_${sample_index+1}" style="height:100px;overflow:scroll">
                                     <div class="accordion-group">
                                         <div class="accordion-heading">
-                                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#explain_call_${test.test.name}_${sample.label}" href="#explain_call_detailed_${test.test.name}_${sample_index+1}">
+                                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#explain_call_${test.test.name}_${sample.label}" href="#explain_call_detailed_${test.test.name}_${sample_index+1}_body">
                                                 ${sample_index+1}. ${sample.label}
                                             </a>
                                         </div>
-                                        <div id="explain_call_detailed_${test.test.name}_${sample_index+1}" class="accordion-body collapse in">
+                                        <div id="explain_call_detailed_${test.test.name}_${sample_index+1}_body" class="accordion-body collapse in" style="height:100px;overflow:scroll">
                                             <div class="accordion-inner">
                                                 <code class="prettyprint">
-                                                    ${sample.responseData}
+                                                    ${sample.responseData?html}
                                                 </code>
                                             </div>
                                         </div>
                                     </div>
+                                    </div>
                                 </#list>
-                            </div>
                             </div>
                             <!--<div class="modal-footer">-->
                                 <!--<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>-->
