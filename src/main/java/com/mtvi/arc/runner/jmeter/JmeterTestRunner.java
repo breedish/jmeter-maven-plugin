@@ -3,8 +3,8 @@ package com.mtvi.arc.runner.jmeter;
 import com.mtvi.arc.config.ExecutionConfig;
 import com.mtvi.arc.domain.SystemTest;
 import com.mtvi.arc.domain.SystemTestManager;
-import com.mtvi.arc.domain.SystemTestResult;
 import com.mtvi.arc.domain.TestExecutionException;
+import com.mtvi.arc.domain.result.SystemTestResult;
 import com.mtvi.arc.runner.ExecutionResult;
 import com.mtvi.arc.runner.Executor;
 import com.mtvi.arc.runner.SystemTestRunner;
@@ -12,6 +12,7 @@ import org.apache.commons.lang.time.DurationFormatUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Date;
 import java.util.Set;
 
 /**
@@ -61,6 +62,8 @@ public class JmeterTestRunner implements SystemTestRunner {
                 order++;
             }
         }
+
+        executionResult.setEndDate(new Date());
 
         LOGGER.info("Test Suite was executed in {}", DurationFormatUtils.formatDurationHMS(System.currentTimeMillis() - startTime));
         testExecutor.finish();

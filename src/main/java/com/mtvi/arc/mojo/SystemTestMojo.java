@@ -2,6 +2,12 @@ package com.mtvi.arc.mojo;
 
 import com.mtvi.arc.config.ExecutionConfig;
 import com.mtvi.arc.domain.DefaultSystemTestManager;
+import com.mtvi.arc.domain.TestExecutionException;
+import com.mtvi.arc.processors.JMeterResultProcessor;
+import com.mtvi.arc.processors.ResultProcessor;
+import com.mtvi.arc.report.DefaultReportBuilder;
+import com.mtvi.arc.report.ReportBuilder;
+import com.mtvi.arc.runner.ExecutionResult;
 import com.mtvi.arc.runner.SystemTestRunner;
 import com.mtvi.arc.runner.jmeter.JmeterTestRunner;
 import org.apache.maven.plugin.AbstractMojo;
@@ -81,6 +87,7 @@ public class SystemTestMojo extends AbstractMojo {
      */
     protected Map<String, String> propertiesSystem;
 
+
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
         try {
@@ -89,12 +96,30 @@ public class SystemTestMojo extends AbstractMojo {
 
             initEnvironment(config);
 
-            SystemTestRunner runner = new JmeterTestRunner(config, new DefaultSystemTestManager());
-            runner.execute();
+            LOG.info("Running system tests..");
+            ExecutionResult result = getRunner(config).execute();
+
+            LOG.info("Processing tests results...");
+            getResultProcessor().process(result, config);
+
+            LOG.info("Building report...");
+            getReportBuilder().buildReport(result, config);
         } catch (Throwable e) {
             LOG.error("Error during build:", e);
             throw new MojoExecutionException("Error during system test execution.", e);
         }
+    }
+
+    private SystemTestRunner getRunner(ExecutionConfig config) throws TestExecutionException {
+        return new JmeterTestRunner(config, new DefaultSystemTestManager());
+    }
+
+    private ResultProcessor getResultProcessor() throws TestExecutionException {
+        return new JMeterResultProcessor();
+    }
+
+    private ReportBuilder getReportBuilder() throws TestExecutionException {
+        return new DefaultReportBuilder();
     }
 
     private void initEnvironment(ExecutionConfig config) throws MojoExecutionException {

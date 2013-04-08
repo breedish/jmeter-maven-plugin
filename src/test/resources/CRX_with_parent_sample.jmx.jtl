@@ -1,0 +1,877 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testResults version="1.2">
+<sample t="656" lt="0" ts="1365313545149" s="true" lb="CRX-1862 Thread Group" rc="200" rm="Number of samples in transaction : 2, number of failing samples : 0" tn="Thread Group 1-1" dt="" de="" by="28391" hn="Dzmitrys-MacBook-Pro.local">
+  <sample t="631" lt="0" ts="1365313545149" s="true" lb="Test cases" rc="200" rm="Number of samples in transaction : 25, number of failing samples : 0" tn="Thread Group 1-1" dt="" de="" by="27575" hn="Dzmitrys-MacBook-Pro.local">
+    <httpSample t="94" lt="94" ts="1365313545149" s="true" lb="Create Imp Schema 1" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" de="" by="263" hn="Dzmitrys-MacBook-Pro.local">
+      <assertionResult>
+        <name>Response Assertion [code = 200]</name>
+        <failure>false</failure>
+        <error>false</error>
+      </assertionResult>
+      <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Powered-By: Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0
+Access-Control-Allow-Origin: *
+Content-Type: text/xml
+Content-Length: 0
+Date: Sun, 07 Apr 2013 05:45:45 GMT
+</responseHeader>
+      <requestHeader class="java.lang.String">X-Published-By: auto-test
+X-Processed-By: auto-test
+Content-Type: text/xml
+</requestHeader>
+      <responseData class="java.lang.String"></responseData>
+      <responseFile class="java.lang.String"></responseFile>
+      <cookies class="java.lang.String"></cookies>
+      <method class="java.lang.String">PUT</method>
+      <queryString class="java.lang.String">&lt;schema-definition xmlns=&quot;http://www.mtvi.com/jcr/1.0&quot; name=&quot;i_schema_1_Test&quot;&gt;   &lt;field-type name=&quot;i_schema_1_Test:String&quot;  descr=&quot;A string of unqualified length.&quot; base-type=&quot;string&quot; /&gt;   &lt;content-type name=&quot;i_schema_1_Test:ContentType1&quot; descr=&quot;ContentType From i_schema_1_Test&quot; abs=&quot;false&quot;  top=&quot;true&quot; &gt;     &lt;field name=&quot;field1&quot; required=&quot;true&quot; field-type=&quot;i_schema_1_Test:String&quot; /&gt;     &lt;field name=&quot;field2&quot; required=&quot;false&quot; field-type=&quot;i_schema_1_Test:String&quot; /&gt;   &lt;/content-type&gt; &lt;/schema-definition&gt;</queryString>
+      <java.net.URL>http://localhost:12542/uca/v2/schema/definition/i_schema_1_Test.xml</java.net.URL>
+    </httpSample>
+    <httpSample t="5" lt="4" ts="1365313545251" s="true" lb="Get versions of IMP_SCHEMA_1" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" de="" by="2869" hn="Dzmitrys-MacBook-Pro.local">
+      <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Powered-By: Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0
+Access-Control-Allow-Origin: *
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Date: Sun, 07 Apr 2013 05:45:45 GMT
+</responseHeader>
+      <requestHeader class="java.lang.String">X-Published-By: auto-test
+X-Processed-By: auto-test
+Content-Type: text/xml
+</requestHeader>
+      <responseData class="java.lang.String">&lt;schema-versions xmlns=&quot;http://www.mtvi.com/jcr/1.0&quot; name=&quot;i_schema_1_Test&quot;&gt;
+  &lt;schema version=&quot;lates1364747378126&quot; href=&quot;/uca/v2/schema/definition/i_schema_1_Test.xml?version=lates1364747378126&quot;/&gt;
+  &lt;schema version=&quot;lates1364747731139&quot; href=&quot;/uca/v2/schema/definition/i_schema_1_Test.xml?version=lates1364747731139&quot;/&gt;
+  &lt;schema version=&quot;lates1364747993170&quot; href=&quot;/uca/v2/schema/definition/i_schema_1_Test.xml?version=lates1364747993170&quot;/&gt;
+  &lt;schema version=&quot;lates1364748524758&quot; href=&quot;/uca/v2/schema/definition/i_schema_1_Test.xml?version=lates1364748524758&quot;/&gt;
+  &lt;schema version=&quot;lates1364750773906&quot; href=&quot;/uca/v2/schema/definition/i_schema_1_Test.xml?version=lates1364750773906&quot;/&gt;
+  &lt;schema version=&quot;lates1364751453846&quot; href=&quot;/uca/v2/schema/definition/i_schema_1_Test.xml?version=lates1364751453846&quot;/&gt;
+  &lt;schema version=&quot;lates1364751848619&quot; href=&quot;/uca/v2/schema/definition/i_schema_1_Test.xml?version=lates1364751848619&quot;/&gt;
+  &lt;schema version=&quot;lates1364752541886&quot; href=&quot;/uca/v2/schema/definition/i_schema_1_Test.xml?version=lates1364752541886&quot;/&gt;
+  &lt;schema version=&quot;lates1364755395442&quot; href=&quot;/uca/v2/schema/definition/i_schema_1_Test.xml?version=lates1364755395442&quot;/&gt;
+  &lt;schema version=&quot;lates1364762826068&quot; href=&quot;/uca/v2/schema/definition/i_schema_1_Test.xml?version=lates1364762826068&quot;/&gt;
+  &lt;schema version=&quot;lates1364763450651&quot; href=&quot;/uca/v2/schema/definition/i_schema_1_Test.xml?version=lates1364763450651&quot;/&gt;
+  &lt;schema version=&quot;lates1364763686977&quot; href=&quot;/uca/v2/schema/definition/i_schema_1_Test.xml?version=lates1364763686977&quot;/&gt;
+  &lt;schema version=&quot;lates1364763862756&quot; href=&quot;/uca/v2/schema/definition/i_schema_1_Test.xml?version=lates1364763862756&quot;/&gt;
+  &lt;schema version=&quot;lates1364764348430&quot; href=&quot;/uca/v2/schema/definition/i_schema_1_Test.xml?version=lates1364764348430&quot;/&gt;
+  &lt;schema version=&quot;lates1364765085053&quot; href=&quot;/uca/v2/schema/definition/i_schema_1_Test.xml?version=lates1364765085053&quot;/&gt;
+  &lt;schema version=&quot;lates1364765283899&quot; href=&quot;/uca/v2/schema/definition/i_schema_1_Test.xml?version=lates1364765283899&quot;/&gt;
+  &lt;schema version=&quot;lates1364765436315&quot; href=&quot;/uca/v2/schema/definition/i_schema_1_Test.xml?version=lates1364765436315&quot;/&gt;
+  &lt;schema version=&quot;lates1365187785061&quot; href=&quot;/uca/v2/schema/definition/i_schema_1_Test.xml?version=lates1365187785061&quot;/&gt;
+  &lt;schema version=&quot;lates1365312536312&quot; href=&quot;/uca/v2/schema/definition/i_schema_1_Test.xml?version=lates1365312536312&quot;/&gt;
+  &lt;schema version=&quot;lates1365312937085&quot; href=&quot;/uca/v2/schema/definition/i_schema_1_Test.xml?version=lates1365312937085&quot;/&gt;
+  &lt;schema version=&quot;latest&quot; href=&quot;/uca/v2/schema/definition/i_schema_1_Test.xml&quot;/&gt;
+&lt;/schema-versions&gt;</responseData>
+      <responseFile class="java.lang.String"></responseFile>
+      <cookies class="java.lang.String"></cookies>
+      <method class="java.lang.String">GET</method>
+      <queryString class="java.lang.String"></queryString>
+      <java.net.URL>http://localhost:12542/uca/v2/schema/versions/i_schema_1_Test.xml</java.net.URL>
+    </httpSample>
+    <httpSample t="7" lt="6" ts="1365313545261" s="true" lb="Release new version of IMP_SCHEMA_1" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" de="" by="814" hn="Dzmitrys-MacBook-Pro.local">
+      <assertionResult>
+        <name>Response Assertion</name>
+        <failure>false</failure>
+        <error>false</error>
+      </assertionResult>
+      <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Powered-By: Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0
+Access-Control-Allow-Origin: *
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Date: Sun, 07 Apr 2013 05:45:45 GMT
+</responseHeader>
+      <requestHeader class="java.lang.String">X-Published-By: auto-test
+X-Processed-By: auto-test
+Content-Type: text/xml
+</requestHeader>
+      <responseData class="java.lang.String">&lt;schema-definition xmlns=&quot;http://www.mtvi.com/jcr/1.0&quot; name=&quot;i_schema_1_Test&quot; version=&quot;lates1365313545258&quot;&gt;
+  &lt;field-type name=&quot;i_schema_1_Test:String&quot; descr=&quot;A string of unqualified length.&quot; base-type=&quot;string&quot;/&gt;
+  &lt;content-type name=&quot;i_schema_1_Test:ContentType1&quot; descr=&quot;ContentType From i_schema_1_Test&quot; abs=&quot;false&quot; top=&quot;true&quot; policy=&quot;false&quot;&gt;
+    &lt;field name=&quot;field1&quot; required=&quot;true&quot; field-type=&quot;i_schema_1_Test:String&quot;/&gt;
+    &lt;field name=&quot;field2&quot; required=&quot;false&quot; field-type=&quot;i_schema_1_Test:String&quot;/&gt;
+  &lt;/content-type&gt;
+&lt;/schema-definition&gt;</responseData>
+      <responseFile class="java.lang.String"></responseFile>
+      <cookies class="java.lang.String"></cookies>
+      <method class="java.lang.String">POST</method>
+      <queryString class="java.lang.String"></queryString>
+      <java.net.URL>http://localhost:12542/uca/v2/schema/release/i_schema_1_Test.xml?version=lates1365313545258</java.net.URL>
+    </httpSample>
+    <httpSample t="87" lt="87" ts="1365313545269" s="true" lb="Create Imp Schema 2" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" de="" by="263" hn="Dzmitrys-MacBook-Pro.local">
+      <assertionResult>
+        <name>Response Assertion [code = 200]</name>
+        <failure>false</failure>
+        <error>false</error>
+      </assertionResult>
+      <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Powered-By: Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0
+Access-Control-Allow-Origin: *
+Content-Type: text/xml
+Content-Length: 0
+Date: Sun, 07 Apr 2013 05:45:45 GMT
+</responseHeader>
+      <requestHeader class="java.lang.String">X-Published-By: auto-test
+X-Processed-By: auto-test
+Content-Type: text/xml
+</requestHeader>
+      <responseData class="java.lang.String"></responseData>
+      <responseFile class="java.lang.String"></responseFile>
+      <cookies class="java.lang.String"></cookies>
+      <method class="java.lang.String">PUT</method>
+      <queryString class="java.lang.String">&lt;schema-definition xmlns=&quot;http://www.mtvi.com/jcr/1.0&quot; name=&quot;i_schema_2_Test&quot;&gt;   &lt;imports name=&quot;i_schema_1_Test&quot; version=&quot;lates1365313545258&quot;/&gt;   &lt;field-type name=&quot;i_schema_2_Test:String&quot;  descr=&quot;A string of unqualified length.&quot; base-type=&quot;string&quot; /&gt;   &lt;content-type name=&quot;i_schema_2_Test:ContentType2&quot; descr=&quot;ContentType From i_schema_2_Test&quot; abs=&quot;false&quot;  top=&quot;true&quot; &gt;     &lt;field name=&quot;field1&quot; required=&quot;true&quot; field-type=&quot;i_schema_2_Test:String&quot; /&gt;     &lt;field name=&quot;field2&quot; required=&quot;false&quot; field-type=&quot;i_schema_2_Test:String&quot; /&gt;   &lt;/content-type&gt; &lt;/schema-definition&gt;</queryString>
+      <java.net.URL>http://localhost:12542/uca/v2/schema/definition/i_schema_2_Test.xml</java.net.URL>
+    </httpSample>
+    <httpSample t="6" lt="6" ts="1365313545358" s="true" lb="Get versions of IMP_SCHEMA_2" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" de="" by="5289" hn="Dzmitrys-MacBook-Pro.local">
+      <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Powered-By: Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0
+Access-Control-Allow-Origin: *
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Date: Sun, 07 Apr 2013 05:45:45 GMT
+</responseHeader>
+      <requestHeader class="java.lang.String">X-Published-By: auto-test
+X-Processed-By: auto-test
+Content-Type: text/xml
+</requestHeader>
+      <responseData class="java.lang.String">&lt;schema-versions xmlns=&quot;http://www.mtvi.com/jcr/1.0&quot; name=&quot;i_schema_2_Test&quot;&gt;
+  &lt;schema version=&quot;lates1364747380993&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364747380993&quot;/&gt;
+  &lt;schema version=&quot;lates1364747388662&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364747388662&quot;/&gt;
+  &lt;schema version=&quot;lates1364747735796&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364747735796&quot;/&gt;
+  &lt;schema version=&quot;lates1364747747849&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364747747849&quot;/&gt;
+  &lt;schema version=&quot;lates1364747993263&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364747993263&quot;/&gt;
+  &lt;schema version=&quot;lates1364747993542&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364747993542&quot;/&gt;
+  &lt;schema version=&quot;lates1364748524870&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364748524870&quot;/&gt;
+  &lt;schema version=&quot;lates1364748525167&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364748525167&quot;/&gt;
+  &lt;schema version=&quot;lates1364750774019&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364750774019&quot;/&gt;
+  &lt;schema version=&quot;lates1364750774293&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364750774293&quot;/&gt;
+  &lt;schema version=&quot;lates1364751453956&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364751453956&quot;/&gt;
+  &lt;schema version=&quot;lates1364751454284&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364751454284&quot;/&gt;
+  &lt;schema version=&quot;lates1364751848740&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364751848740&quot;/&gt;
+  &lt;schema version=&quot;lates1364751849121&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364751849121&quot;/&gt;
+  &lt;schema version=&quot;lates1364752542036&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364752542036&quot;/&gt;
+  &lt;schema version=&quot;lates1364752542369&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364752542369&quot;/&gt;
+  &lt;schema version=&quot;lates1364755395535&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364755395535&quot;/&gt;
+  &lt;schema version=&quot;lates1364755395826&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364755395826&quot;/&gt;
+  &lt;schema version=&quot;lates1364762826188&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364762826188&quot;/&gt;
+  &lt;schema version=&quot;lates1364762826523&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364762826523&quot;/&gt;
+  &lt;schema version=&quot;lates1364763450762&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364763450762&quot;/&gt;
+  &lt;schema version=&quot;lates1364763451033&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364763451033&quot;/&gt;
+  &lt;schema version=&quot;lates1364763687100&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364763687100&quot;/&gt;
+  &lt;schema version=&quot;lates1364763687419&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364763687419&quot;/&gt;
+  &lt;schema version=&quot;lates1364763862880&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364763862880&quot;/&gt;
+  &lt;schema version=&quot;lates1364763863170&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364763863170&quot;/&gt;
+  &lt;schema version=&quot;lates1364764348554&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364764348554&quot;/&gt;
+  &lt;schema version=&quot;lates1364764348880&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364764348880&quot;/&gt;
+  &lt;schema version=&quot;lates1364765085166&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364765085166&quot;/&gt;
+  &lt;schema version=&quot;lates1364765085490&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364765085490&quot;/&gt;
+  &lt;schema version=&quot;lates1364765284032&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364765284032&quot;/&gt;
+  &lt;schema version=&quot;lates1364765284418&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364765284418&quot;/&gt;
+  &lt;schema version=&quot;lates1364765436436&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364765436436&quot;/&gt;
+  &lt;schema version=&quot;lates1364765436743&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364765436743&quot;/&gt;
+  &lt;schema version=&quot;lates1365187785178&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1365187785178&quot;/&gt;
+  &lt;schema version=&quot;lates1365187785512&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1365187785512&quot;/&gt;
+  &lt;schema version=&quot;lates1365312536596&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1365312536596&quot;/&gt;
+  &lt;schema version=&quot;lates1365312537789&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1365312537789&quot;/&gt;
+  &lt;schema version=&quot;lates1365312937208&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1365312937208&quot;/&gt;
+  &lt;schema version=&quot;lates1365312937590&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1365312937590&quot;/&gt;
+  &lt;schema version=&quot;latest&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml&quot;/&gt;
+&lt;/schema-versions&gt;</responseData>
+      <responseFile class="java.lang.String"></responseFile>
+      <cookies class="java.lang.String"></cookies>
+      <method class="java.lang.String">GET</method>
+      <queryString class="java.lang.String"></queryString>
+      <java.net.URL>http://localhost:12542/uca/v2/schema/versions/i_schema_2_Test.xml</java.net.URL>
+    </httpSample>
+    <httpSample t="9" lt="8" ts="1365313545374" s="true" lb="Release new version of IMP_SCHEMA_2" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" de="" by="814" hn="Dzmitrys-MacBook-Pro.local">
+      <assertionResult>
+        <name>Response Assertion</name>
+        <failure>false</failure>
+        <error>false</error>
+      </assertionResult>
+      <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Powered-By: Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0
+Access-Control-Allow-Origin: *
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Date: Sun, 07 Apr 2013 05:45:45 GMT
+</responseHeader>
+      <requestHeader class="java.lang.String">X-Published-By: auto-test
+X-Processed-By: auto-test
+Content-Type: text/xml
+</requestHeader>
+      <responseData class="java.lang.String">&lt;schema-definition xmlns=&quot;http://www.mtvi.com/jcr/1.0&quot; name=&quot;i_schema_2_Test&quot; version=&quot;lates1365313545366&quot;&gt;
+  &lt;field-type name=&quot;i_schema_2_Test:String&quot; descr=&quot;A string of unqualified length.&quot; base-type=&quot;string&quot;/&gt;
+  &lt;content-type name=&quot;i_schema_2_Test:ContentType2&quot; descr=&quot;ContentType From i_schema_2_Test&quot; abs=&quot;false&quot; top=&quot;true&quot; policy=&quot;false&quot;&gt;
+    &lt;field name=&quot;field1&quot; required=&quot;true&quot; field-type=&quot;i_schema_2_Test:String&quot;/&gt;
+    &lt;field name=&quot;field2&quot; required=&quot;false&quot; field-type=&quot;i_schema_2_Test:String&quot;/&gt;
+  &lt;/content-type&gt;
+&lt;/schema-definition&gt;</responseData>
+      <responseFile class="java.lang.String"></responseFile>
+      <cookies class="java.lang.String"></cookies>
+      <method class="java.lang.String">POST</method>
+      <queryString class="java.lang.String"></queryString>
+      <java.net.URL>http://localhost:12542/uca/v2/schema/release/i_schema_2_Test.xml?version=lates1365313545366</java.net.URL>
+    </httpSample>
+    <httpSample t="87" lt="87" ts="1365313545384" s="true" lb="Create Main Schema" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" de="" by="263" hn="Dzmitrys-MacBook-Pro.local">
+      <assertionResult>
+        <name>Response Assertion [code = 200]</name>
+        <failure>false</failure>
+        <error>false</error>
+      </assertionResult>
+      <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Powered-By: Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0
+Access-Control-Allow-Origin: *
+Content-Type: text/xml
+Content-Length: 0
+Date: Sun, 07 Apr 2013 05:45:45 GMT
+</responseHeader>
+      <requestHeader class="java.lang.String">X-Published-By: auto-test
+X-Processed-By: auto-test
+Content-Type: text/xml
+</requestHeader>
+      <responseData class="java.lang.String"></responseData>
+      <responseFile class="java.lang.String"></responseFile>
+      <cookies class="java.lang.String"></cookies>
+      <method class="java.lang.String">PUT</method>
+      <queryString class="java.lang.String">&lt;schema-definition xmlns=&quot;http://www.mtvi.com/jcr/1.0&quot; name=&quot;m_schema_Test&quot;&gt;   &lt;imports name=&quot;i_schema_2_Test&quot;   version=&quot;lates1365313545366&quot; /&gt;   &lt;field-type name=&quot;m_schema_Test:String&quot;   descr=&quot;A string of unqualified length.&quot; base-type=&quot;string&quot; /&gt;   &lt;content-type name=&quot;m_schema_Test:ContentType3&quot;   descr=&quot;ContentType From m_schema_Test&quot; abs=&quot;false&quot; top=&quot;true&quot;&gt;     &lt;field name=&quot;field1&quot; required=&quot;true&quot;     field-type=&quot;m_schema_Test:String&quot; /&gt;     &lt;field name=&quot;field2&quot; required=&quot;false&quot;     field-type=&quot;m_schema_Test:String&quot; /&gt;   &lt;/content-type&gt; &lt;/schema-definition&gt;</queryString>
+      <java.net.URL>http://localhost:12542/uca/v2/schema/definition/m_schema_Test.xml</java.net.URL>
+    </httpSample>
+    <httpSample t="13" lt="12" ts="1365313545473" s="true" lb="Create source environment" rc="200" rm="OK" tn="Thread Group 1-1" dt="" de="" by="943" hn="Dzmitrys-MacBook-Pro.local">
+      <assertionResult>
+        <name>Response Assertion [code = 200]</name>
+        <failure>false</failure>
+        <error>false</error>
+      </assertionResult>
+      <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Powered-By: Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0
+Access-Control-Allow-Origin: *
+Transfer-Encoding: chunked
+Date: Sun, 07 Apr 2013 05:45:45 GMT
+</responseHeader>
+      <requestHeader class="java.lang.String">X-Published-By: auto-test
+X-Processed-By: auto-test
+Content-Type: text/xml
+</requestHeader>
+      <responseData class="java.lang.String"/>
+      <responseFile class="java.lang.String"></responseFile>
+      <cookies class="java.lang.String"></cookies>
+      <method class="java.lang.String">PUT</method>
+      <queryString class="java.lang.String">&lt;content-environment env-group=&quot;default&quot; xmlns=&quot;http://www.mtvi.com/jcr/1.0&quot; name=&quot;crx-1862-test-env&quot; created-by=&quot;me&quot; read-only=&quot;false&quot; pub-restricted=&quot;false&quot;&gt;   &lt;schema-ref name=&quot;m_schema_Test&quot;/&gt;   &lt;schema-ref name=&quot;i_schema_2_Test&quot; version=&quot;lates1365313545366&quot;/&gt;   &lt;schema-ref name=&quot;i_schema_1_Test&quot; version=&quot;lates1365313545258&quot;/&gt; &lt;/content-environment&gt; </queryString>
+      <java.net.URL>http://localhost:12542/uca/v2/environment/crx-1862-test-env.xml</java.net.URL>
+    </httpSample>
+    <httpSample t="7" lt="6" ts="1365313545487" s="true" lb="Create Content Namespace" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" de="" by="771" hn="Dzmitrys-MacBook-Pro.local">
+      <assertionResult>
+        <name>Response Assertion [code = 200]</name>
+        <failure>false</failure>
+        <error>false</error>
+      </assertionResult>
+      <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Powered-By: Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0
+Access-Control-Allow-Origin: *
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Date: Sun, 07 Apr 2013 05:45:45 GMT
+</responseHeader>
+      <requestHeader class="java.lang.String">X-Published-By: auto-test
+X-Processed-By: auto-test
+Content-Type: text/xml
+</requestHeader>
+      <responseData class="java.lang.String">&lt;content-namespace xmlns=&quot;http://www.mtvi.com/jcr/1.0&quot; name=&quot;namespace2&quot; href=&quot;/uca/v2/content/crx-1862-test-env.xml?contentnamespace=namespace2&quot; date-created=&quot;2013-03-31T08:31:17.437Z&quot; created-by=&quot;auto-test&quot; date-updated=&quot;2013-04-07T05:45:45.492Z&quot; updated-by=&quot;auto-test&quot;&gt;
+  &lt;cn-schema-reference&gt;
+    &lt;type-template&gt;m_schema_Test:*&lt;/type-template&gt;
+    &lt;type-template&gt;i_schema_2_Test:*&lt;/type-template&gt;
+    &lt;type-template&gt;i_schema_1_Test:*&lt;/type-template&gt;
+  &lt;/cn-schema-reference&gt;
+&lt;/content-namespace&gt;</responseData>
+      <responseFile class="java.lang.String"></responseFile>
+      <cookies class="java.lang.String"></cookies>
+      <method class="java.lang.String">PUT</method>
+      <queryString class="java.lang.String">&lt;content-namespace xmlns=&quot;http://www.mtvi.com/jcr/1.0&quot; name=&quot;namespace2&quot; max-items-per-container=&quot;100&quot; href=&quot;/uca/v2/content/crx-1862-test-env.xml&quot;&gt;   &lt;cn-schema-reference name=&quot;m_schema_Test&quot;  &gt;     &lt;type-template&gt;m_schema_Test:*&lt;/type-template&gt; 	&lt;type-template&gt;i_schema_2_Test:*&lt;/type-template&gt; 	&lt;type-template&gt;i_schema_1_Test:*&lt;/type-template&gt;   &lt;/cn-schema-reference&gt; &lt;/content-namespace&gt;</queryString>
+      <java.net.URL>http://localhost:12542/uca/v2/content-namespace/crx-1862-test-env/namespace2.xml</java.net.URL>
+    </httpSample>
+    <httpSample t="4" lt="4" ts="1365313545495" s="true" lb="Generate CR1_ID" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" de="" by="313" hn="Dzmitrys-MacBook-Pro.local">
+      <assertionResult>
+        <name>Response Assertion</name>
+        <failure>false</failure>
+        <error>false</error>
+      </assertionResult>
+      <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Powered-By: Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0
+Content-Type: text/plain
+Transfer-Encoding: chunked
+Date: Sun, 07 Apr 2013 05:45:45 GMT
+</responseHeader>
+      <requestHeader class="java.lang.String">X-Published-By: auto-test
+X-Processed-By: auto-test
+Content-Type: text/xml
+</requestHeader>
+      <responseData class="java.lang.String">mgid:arc:content:crx-1862-test-env:dc45d28e-8bef-471a-bd24-02e567a4def7</responseData>
+      <responseFile class="java.lang.String"></responseFile>
+      <cookies class="java.lang.String"></cookies>
+      <method class="java.lang.String">POST</method>
+      <queryString class="java.lang.String">&lt;actual file content, not shown here&gt;</queryString>
+      <java.net.URL>http://localhost:12542/ucsa/v2/mgid/jcr/content/crx-1862-test-env</java.net.URL>
+    </httpSample>
+    <httpSample t="3" lt="3" ts="1365313545501" s="true" lb="Generate CR2_ID" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" de="" by="313" hn="Dzmitrys-MacBook-Pro.local">
+      <assertionResult>
+        <name>Response Assertion</name>
+        <failure>false</failure>
+        <error>false</error>
+      </assertionResult>
+      <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Powered-By: Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0
+Content-Type: text/plain
+Transfer-Encoding: chunked
+Date: Sun, 07 Apr 2013 05:45:45 GMT
+</responseHeader>
+      <requestHeader class="java.lang.String">X-Published-By: auto-test
+X-Processed-By: auto-test
+Content-Type: text/xml
+</requestHeader>
+      <responseData class="java.lang.String">mgid:arc:content:crx-1862-test-env:0b89a563-fe47-4f00-b5cb-713d61ea5869</responseData>
+      <responseFile class="java.lang.String"></responseFile>
+      <cookies class="java.lang.String"></cookies>
+      <method class="java.lang.String">POST</method>
+      <queryString class="java.lang.String">&lt;actual file content, not shown here&gt;</queryString>
+      <java.net.URL>http://localhost:12542/ucsa/v2/mgid/jcr/content/crx-1862-test-env</java.net.URL>
+    </httpSample>
+    <httpSample t="3" lt="3" ts="1365313545506" s="true" lb="Generate CR3_ID" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" de="" by="313" hn="Dzmitrys-MacBook-Pro.local">
+      <assertionResult>
+        <name>Response Assertion</name>
+        <failure>false</failure>
+        <error>false</error>
+      </assertionResult>
+      <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Powered-By: Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0
+Content-Type: text/plain
+Transfer-Encoding: chunked
+Date: Sun, 07 Apr 2013 05:45:45 GMT
+</responseHeader>
+      <requestHeader class="java.lang.String">X-Published-By: auto-test
+X-Processed-By: auto-test
+Content-Type: text/xml
+</requestHeader>
+      <responseData class="java.lang.String">mgid:arc:content:crx-1862-test-env:6b905a63-6e7a-42ec-a37e-8801953bf10a</responseData>
+      <responseFile class="java.lang.String"></responseFile>
+      <cookies class="java.lang.String"></cookies>
+      <method class="java.lang.String">POST</method>
+      <queryString class="java.lang.String">&lt;actual file content, not shown here&gt;</queryString>
+      <java.net.URL>http://localhost:12542/ucsa/v2/mgid/jcr/content/crx-1862-test-env</java.net.URL>
+    </httpSample>
+    <httpSample t="21" lt="21" ts="1365313545510" s="true" lb="Create content-records" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" de="" by="263" hn="Dzmitrys-MacBook-Pro.local">
+      <assertionResult>
+        <name>Response Assertion [code = 200]</name>
+        <failure>false</failure>
+        <error>false</error>
+      </assertionResult>
+      <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Powered-By: Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0
+Access-Control-Allow-Origin: *
+Content-Type: text/xml
+Content-Length: 0
+Date: Sun, 07 Apr 2013 05:45:45 GMT
+</responseHeader>
+      <requestHeader class="java.lang.String">X-Published-By: auto-test
+X-Processed-By: auto-test
+Content-Type: text/xml
+</requestHeader>
+      <responseData class="java.lang.String"></responseData>
+      <responseFile class="java.lang.String"></responseFile>
+      <cookies class="java.lang.String"></cookies>
+      <method class="java.lang.String">PUT</method>
+      <queryString class="java.lang.String">&lt;content-list xmlns=&quot;http://www.mtvi.com/jcr/1.0&quot;&gt;   &lt;content-record content-namespace=&quot;namespace2&quot; content-type=&quot;m_schema_Test:ContentType3&quot;   mgid=&quot;jcr:content:namespace2:dc45d28e-8bef-471a-bd24-02e567a4def7&quot;   url-key=&quot;/uca/v2/content/crx-1862-test-env/dc45d28e-8bef-471a-bd24-02e567a4def7&quot;   created-by=&quot;test&quot;&gt;     &lt;field name=&quot;field1&quot; type=&quot;string&quot;&gt;Field1 Value&lt;/field&gt;     &lt;field name=&quot;field2&quot; type=&quot;string&quot;&gt;Field2 Value&lt;/field&gt;   &lt;/content-record&gt;   &lt;content-record content-namespace=&quot;namespace2&quot; content-type=&quot;i_schema_2_Test:ContentType2&quot;   mgid=&quot;jcr:content:namespace2:0b89a563-fe47-4f00-b5cb-713d61ea5869&quot;   url-key=&quot;/uca/v2/content/crx-1862-test-env/0b89a563-fe47-4f00-b5cb-713d61ea5869&quot;   created-by=&quot;test&quot;&gt;     &lt;field name=&quot;field1&quot; type=&quot;string&quot;&gt;Field3 Value&lt;/field&gt;     &lt;field name=&quot;field2&quot; type=&quot;string&quot;&gt;Field4 Value&lt;/field&gt;   &lt;/content-record&gt;   &lt;content-record content-namespace=&quot;namespace2&quot; content-type=&quot;i_schema_1_Test:ContentType1&quot;   mgid=&quot;jcr:content:namespace2:6b905a63-6e7a-42ec-a37e-8801953bf10a&quot;   url-key=&quot;/uca/v2/content/crx-1862-test-env/6b905a63-6e7a-42ec-a37e-8801953bf10a&quot;   created-by=&quot;test&quot;&gt;     &lt;field name=&quot;field1&quot; type=&quot;string&quot;&gt;Field3 Value&lt;/field&gt;     &lt;field name=&quot;field2&quot; type=&quot;string&quot;&gt;Field4 Value&lt;/field&gt;   &lt;/content-record&gt; &lt;/content-list&gt; </queryString>
+      <java.net.URL>http://localhost:12542/uca/v2/content/crx-1862-test-env.xml</java.net.URL>
+    </httpSample>
+    <httpSample t="7" lt="6" ts="1365313545532" s="true" lb="Find CR1_ID Record" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" de="" by="1033" hn="Dzmitrys-MacBook-Pro.local">
+      <assertionResult>
+        <name>Response Assertion</name>
+        <failure>false</failure>
+        <error>false</error>
+      </assertionResult>
+      <assertionResult>
+        <name>XPath Assertion</name>
+        <failure>false</failure>
+        <error>false</error>
+        <failureMessage></failureMessage>
+      </assertionResult>
+      <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Powered-By: Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0
+Access-Control-Allow-Origin: *
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Date: Sun, 07 Apr 2013 05:45:45 GMT
+</responseHeader>
+      <requestHeader class="java.lang.String">X-Published-By: auto-test
+X-Processed-By: auto-test
+Content-Type: text/xml
+</requestHeader>
+      <responseData class="java.lang.String">&lt;content-record xmlns=&quot;http://www.mtvi.com/jcr/1.0&quot; content-type=&quot;m_schema_Test:ContentType3&quot; id=&quot;dc45d28e-8bef-471a-bd24-02e567a4def7&quot; href=&quot;/uca/v2/content/crx-1862-test-env/dc45d28e-8bef-471a-bd24-02e567a4def7.xml&quot; mgid=&quot;arc:content:crx-1862-test-env:dc45d28e-8bef-471a-bd24-02e567a4def7&quot; content-namespace=&quot;namespace2&quot; url-key=&quot;/uca/v2/content/crx-1862-test-env/dc45d28e-8bef-471a-bd24-02e567a4def7&quot; short-id=&quot;756tex&quot; status=&quot;DEFAULT&quot; date-created=&quot;2013-04-07T05:45:45.519Z&quot; created-by=&quot;auto-test&quot; date-updated=&quot;2013-04-07T05:45:45.520Z&quot; updated-by=&quot;auto-test&quot; schema-saved-for=&quot;m_schema_Test:latest&quot; revision-original=&quot;0&quot;&gt;
+  &lt;field name=&quot;field1&quot; type=&quot;string&quot;&gt;Field1 Value&lt;/field&gt;
+  &lt;field name=&quot;field2&quot; type=&quot;string&quot;&gt;Field2 Value&lt;/field&gt;
+&lt;/content-record&gt;</responseData>
+      <responseFile class="java.lang.String"></responseFile>
+      <cookies class="java.lang.String"></cookies>
+      <method class="java.lang.String">GET</method>
+      <queryString class="java.lang.String"></queryString>
+      <java.net.URL>http://localhost:12542/uca/v2/content/crx-1862-test-env/dc45d28e-8bef-471a-bd24-02e567a4def7.xml</java.net.URL>
+    </httpSample>
+    <httpSample t="7" lt="6" ts="1365313545541" s="true" lb="Find CR2_ID Record" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" de="" by="1049" hn="Dzmitrys-MacBook-Pro.local">
+      <assertionResult>
+        <name>Response Assertion</name>
+        <failure>false</failure>
+        <error>false</error>
+      </assertionResult>
+      <assertionResult>
+        <name>XPath Assertion</name>
+        <failure>false</failure>
+        <error>false</error>
+        <failureMessage></failureMessage>
+      </assertionResult>
+      <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Powered-By: Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0
+Access-Control-Allow-Origin: *
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Date: Sun, 07 Apr 2013 05:45:45 GMT
+</responseHeader>
+      <requestHeader class="java.lang.String">X-Published-By: auto-test
+X-Processed-By: auto-test
+Content-Type: text/xml
+</requestHeader>
+      <responseData class="java.lang.String">&lt;content-record xmlns=&quot;http://www.mtvi.com/jcr/1.0&quot; content-type=&quot;i_schema_2_Test:ContentType2&quot; id=&quot;0b89a563-fe47-4f00-b5cb-713d61ea5869&quot; href=&quot;/uca/v2/content/crx-1862-test-env/0b89a563-fe47-4f00-b5cb-713d61ea5869.xml&quot; mgid=&quot;arc:content:crx-1862-test-env:0b89a563-fe47-4f00-b5cb-713d61ea5869&quot; content-namespace=&quot;namespace2&quot; url-key=&quot;/uca/v2/content/crx-1862-test-env/0b89a563-fe47-4f00-b5cb-713d61ea5869&quot; short-id=&quot;xqty52&quot; status=&quot;DEFAULT&quot; date-created=&quot;2013-04-07T05:45:45.523Z&quot; created-by=&quot;auto-test&quot; date-updated=&quot;2013-04-07T05:45:45.524Z&quot; updated-by=&quot;auto-test&quot; schema-saved-for=&quot;i_schema_2_Test:lates1365313545366&quot; revision-original=&quot;0&quot;&gt;
+  &lt;field name=&quot;field1&quot; type=&quot;string&quot;&gt;Field3 Value&lt;/field&gt;
+  &lt;field name=&quot;field2&quot; type=&quot;string&quot;&gt;Field4 Value&lt;/field&gt;
+&lt;/content-record&gt;</responseData>
+      <responseFile class="java.lang.String"></responseFile>
+      <cookies class="java.lang.String"></cookies>
+      <method class="java.lang.String">GET</method>
+      <queryString class="java.lang.String"></queryString>
+      <java.net.URL>http://localhost:12542/uca/v2/content/crx-1862-test-env/0b89a563-fe47-4f00-b5cb-713d61ea5869.xml</java.net.URL>
+    </httpSample>
+    <httpSample t="6" lt="6" ts="1365313545550" s="true" lb="Find CR1_3D Record" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" de="" by="1049" hn="Dzmitrys-MacBook-Pro.local">
+      <assertionResult>
+        <name>Response Assertion</name>
+        <failure>false</failure>
+        <error>false</error>
+      </assertionResult>
+      <assertionResult>
+        <name>XPath Assertion</name>
+        <failure>false</failure>
+        <error>false</error>
+        <failureMessage></failureMessage>
+      </assertionResult>
+      <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Powered-By: Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0
+Access-Control-Allow-Origin: *
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Date: Sun, 07 Apr 2013 05:45:45 GMT
+</responseHeader>
+      <requestHeader class="java.lang.String">X-Published-By: auto-test
+X-Processed-By: auto-test
+Content-Type: text/xml
+</requestHeader>
+      <responseData class="java.lang.String">&lt;content-record xmlns=&quot;http://www.mtvi.com/jcr/1.0&quot; content-type=&quot;i_schema_1_Test:ContentType1&quot; id=&quot;6b905a63-6e7a-42ec-a37e-8801953bf10a&quot; href=&quot;/uca/v2/content/crx-1862-test-env/6b905a63-6e7a-42ec-a37e-8801953bf10a.xml&quot; mgid=&quot;arc:content:crx-1862-test-env:6b905a63-6e7a-42ec-a37e-8801953bf10a&quot; content-namespace=&quot;namespace2&quot; url-key=&quot;/uca/v2/content/crx-1862-test-env/6b905a63-6e7a-42ec-a37e-8801953bf10a&quot; short-id=&quot;jizvlq&quot; status=&quot;DEFAULT&quot; date-created=&quot;2013-04-07T05:45:45.527Z&quot; created-by=&quot;auto-test&quot; date-updated=&quot;2013-04-07T05:45:45.527Z&quot; updated-by=&quot;auto-test&quot; schema-saved-for=&quot;i_schema_1_Test:lates1365313545258&quot; revision-original=&quot;0&quot;&gt;
+  &lt;field name=&quot;field1&quot; type=&quot;string&quot;&gt;Field3 Value&lt;/field&gt;
+  &lt;field name=&quot;field2&quot; type=&quot;string&quot;&gt;Field4 Value&lt;/field&gt;
+&lt;/content-record&gt;</responseData>
+      <responseFile class="java.lang.String"></responseFile>
+      <cookies class="java.lang.String"></cookies>
+      <method class="java.lang.String">GET</method>
+      <queryString class="java.lang.String"></queryString>
+      <java.net.URL>http://localhost:12542/uca/v2/content/crx-1862-test-env/6b905a63-6e7a-42ec-a37e-8801953bf10a.xml</java.net.URL>
+    </httpSample>
+    <httpSample t="69" lt="69" ts="1365313545559" s="true" lb="Update Imp Schema 2" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" de="" by="263" hn="Dzmitrys-MacBook-Pro.local">
+      <assertionResult>
+        <name>Response Assertion [code = 200]</name>
+        <failure>false</failure>
+        <error>false</error>
+      </assertionResult>
+      <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Powered-By: Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0
+Access-Control-Allow-Origin: *
+Content-Type: text/xml
+Content-Length: 0
+Date: Sun, 07 Apr 2013 05:45:45 GMT
+</responseHeader>
+      <requestHeader class="java.lang.String">X-Published-By: auto-test
+X-Processed-By: auto-test
+Content-Type: text/xml
+</requestHeader>
+      <responseData class="java.lang.String"></responseData>
+      <responseFile class="java.lang.String"></responseFile>
+      <cookies class="java.lang.String"></cookies>
+      <method class="java.lang.String">PUT</method>
+      <queryString class="java.lang.String">&lt;schema-definition xmlns=&quot;http://www.mtvi.com/jcr/1.0&quot; name=&quot;i_schema_2_Test&quot;&gt;   &lt;imports name=&quot;i_schema_1_Test&quot;   version=&quot;lates1365313545258&quot; /&gt;   &lt;field-type name=&quot;i_schema_2_Test:String&quot;   descr=&quot;A string of unqualified length.&quot; base-type=&quot;string&quot; /&gt;   &lt;content-type name=&quot;i_schema_2_Test:ContentType2&quot;   descr=&quot;ContentType From i_schema_2_Test&quot; abs=&quot;false&quot; top=&quot;true&quot;&gt;   &lt;field name=&quot;field1&quot; required=&quot;true&quot;   field-type=&quot;i_schema_2_Test:String&quot; /&gt;   &lt;field name=&quot;field2&quot; required=&quot;false&quot;   field-type=&quot;i_schema_2_Test:String&quot; /&gt;     &lt;field name=&quot;field3&quot; required=&quot;true&quot;   field-type=&quot;i_schema_2_Test:String&quot; /&gt;   &lt;/content-type&gt; &lt;/schema-definition&gt;</queryString>
+      <java.net.URL>http://localhost:12542/uca/v2/schema/definition/i_schema_2_Test.xml</java.net.URL>
+    </httpSample>
+    <httpSample t="5" lt="5" ts="1365313545630" s="true" lb="Find CR2_ID Record" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" de="" by="1049" hn="Dzmitrys-MacBook-Pro.local">
+      <assertionResult>
+        <name>Response Assertion</name>
+        <failure>false</failure>
+        <error>false</error>
+      </assertionResult>
+      <assertionResult>
+        <name>XPath Assertion</name>
+        <failure>false</failure>
+        <error>false</error>
+        <failureMessage></failureMessage>
+      </assertionResult>
+      <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Powered-By: Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0
+Access-Control-Allow-Origin: *
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Date: Sun, 07 Apr 2013 05:45:45 GMT
+</responseHeader>
+      <requestHeader class="java.lang.String">X-Published-By: auto-test
+X-Processed-By: auto-test
+Content-Type: text/xml
+</requestHeader>
+      <responseData class="java.lang.String">&lt;content-record xmlns=&quot;http://www.mtvi.com/jcr/1.0&quot; content-type=&quot;i_schema_2_Test:ContentType2&quot; id=&quot;0b89a563-fe47-4f00-b5cb-713d61ea5869&quot; href=&quot;/uca/v2/content/crx-1862-test-env/0b89a563-fe47-4f00-b5cb-713d61ea5869.xml&quot; mgid=&quot;arc:content:crx-1862-test-env:0b89a563-fe47-4f00-b5cb-713d61ea5869&quot; content-namespace=&quot;namespace2&quot; url-key=&quot;/uca/v2/content/crx-1862-test-env/0b89a563-fe47-4f00-b5cb-713d61ea5869&quot; short-id=&quot;xqty52&quot; status=&quot;DEFAULT&quot; date-created=&quot;2013-04-07T05:45:45.523Z&quot; created-by=&quot;auto-test&quot; date-updated=&quot;2013-04-07T05:45:45.524Z&quot; updated-by=&quot;auto-test&quot; schema-saved-for=&quot;i_schema_2_Test:lates1365313545366&quot; revision-original=&quot;0&quot;&gt;
+  &lt;field name=&quot;field1&quot; type=&quot;string&quot;&gt;Field3 Value&lt;/field&gt;
+  &lt;field name=&quot;field2&quot; type=&quot;string&quot;&gt;Field4 Value&lt;/field&gt;
+&lt;/content-record&gt;</responseData>
+      <responseFile class="java.lang.String"></responseFile>
+      <cookies class="java.lang.String"></cookies>
+      <method class="java.lang.String">GET</method>
+      <queryString class="java.lang.String"></queryString>
+      <java.net.URL>http://localhost:12542/uca/v2/content/crx-1862-test-env/0b89a563-fe47-4f00-b5cb-713d61ea5869.xml</java.net.URL>
+    </httpSample>
+    <httpSample t="4" lt="3" ts="1365313545638" s="true" lb="Get versions of IMP_SCHEMA_2" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" de="" by="5410" hn="Dzmitrys-MacBook-Pro.local">
+      <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Powered-By: Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0
+Access-Control-Allow-Origin: *
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Date: Sun, 07 Apr 2013 05:45:45 GMT
+</responseHeader>
+      <requestHeader class="java.lang.String">X-Published-By: auto-test
+X-Processed-By: auto-test
+Content-Type: text/xml
+</requestHeader>
+      <responseData class="java.lang.String">&lt;schema-versions xmlns=&quot;http://www.mtvi.com/jcr/1.0&quot; name=&quot;i_schema_2_Test&quot;&gt;
+  &lt;schema version=&quot;lates1364747380993&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364747380993&quot;/&gt;
+  &lt;schema version=&quot;lates1364747388662&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364747388662&quot;/&gt;
+  &lt;schema version=&quot;lates1364747735796&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364747735796&quot;/&gt;
+  &lt;schema version=&quot;lates1364747747849&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364747747849&quot;/&gt;
+  &lt;schema version=&quot;lates1364747993263&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364747993263&quot;/&gt;
+  &lt;schema version=&quot;lates1364747993542&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364747993542&quot;/&gt;
+  &lt;schema version=&quot;lates1364748524870&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364748524870&quot;/&gt;
+  &lt;schema version=&quot;lates1364748525167&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364748525167&quot;/&gt;
+  &lt;schema version=&quot;lates1364750774019&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364750774019&quot;/&gt;
+  &lt;schema version=&quot;lates1364750774293&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364750774293&quot;/&gt;
+  &lt;schema version=&quot;lates1364751453956&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364751453956&quot;/&gt;
+  &lt;schema version=&quot;lates1364751454284&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364751454284&quot;/&gt;
+  &lt;schema version=&quot;lates1364751848740&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364751848740&quot;/&gt;
+  &lt;schema version=&quot;lates1364751849121&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364751849121&quot;/&gt;
+  &lt;schema version=&quot;lates1364752542036&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364752542036&quot;/&gt;
+  &lt;schema version=&quot;lates1364752542369&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364752542369&quot;/&gt;
+  &lt;schema version=&quot;lates1364755395535&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364755395535&quot;/&gt;
+  &lt;schema version=&quot;lates1364755395826&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364755395826&quot;/&gt;
+  &lt;schema version=&quot;lates1364762826188&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364762826188&quot;/&gt;
+  &lt;schema version=&quot;lates1364762826523&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364762826523&quot;/&gt;
+  &lt;schema version=&quot;lates1364763450762&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364763450762&quot;/&gt;
+  &lt;schema version=&quot;lates1364763451033&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364763451033&quot;/&gt;
+  &lt;schema version=&quot;lates1364763687100&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364763687100&quot;/&gt;
+  &lt;schema version=&quot;lates1364763687419&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364763687419&quot;/&gt;
+  &lt;schema version=&quot;lates1364763862880&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364763862880&quot;/&gt;
+  &lt;schema version=&quot;lates1364763863170&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364763863170&quot;/&gt;
+  &lt;schema version=&quot;lates1364764348554&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364764348554&quot;/&gt;
+  &lt;schema version=&quot;lates1364764348880&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364764348880&quot;/&gt;
+  &lt;schema version=&quot;lates1364765085166&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364765085166&quot;/&gt;
+  &lt;schema version=&quot;lates1364765085490&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364765085490&quot;/&gt;
+  &lt;schema version=&quot;lates1364765284032&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364765284032&quot;/&gt;
+  &lt;schema version=&quot;lates1364765284418&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364765284418&quot;/&gt;
+  &lt;schema version=&quot;lates1364765436436&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364765436436&quot;/&gt;
+  &lt;schema version=&quot;lates1364765436743&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1364765436743&quot;/&gt;
+  &lt;schema version=&quot;lates1365187785178&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1365187785178&quot;/&gt;
+  &lt;schema version=&quot;lates1365187785512&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1365187785512&quot;/&gt;
+  &lt;schema version=&quot;lates1365312536596&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1365312536596&quot;/&gt;
+  &lt;schema version=&quot;lates1365312537789&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1365312537789&quot;/&gt;
+  &lt;schema version=&quot;lates1365312937208&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1365312937208&quot;/&gt;
+  &lt;schema version=&quot;lates1365312937590&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1365312937590&quot;/&gt;
+  &lt;schema version=&quot;lates1365313545366&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml?version=lates1365313545366&quot;/&gt;
+  &lt;schema version=&quot;latest&quot; href=&quot;/uca/v2/schema/definition/i_schema_2_Test.xml&quot;/&gt;
+&lt;/schema-versions&gt;</responseData>
+      <responseFile class="java.lang.String"></responseFile>
+      <cookies class="java.lang.String"></cookies>
+      <method class="java.lang.String">GET</method>
+      <queryString class="java.lang.String"></queryString>
+      <java.net.URL>http://localhost:12542/uca/v2/schema/versions/i_schema_2_Test.xml</java.net.URL>
+    </httpSample>
+    <httpSample t="5" lt="5" ts="1365313545651" s="true" lb="Release new version of IMP_SCHEMA_2" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" de="" by="893" hn="Dzmitrys-MacBook-Pro.local">
+      <assertionResult>
+        <name>Response Assertion</name>
+        <failure>false</failure>
+        <error>false</error>
+      </assertionResult>
+      <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Powered-By: Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0
+Access-Control-Allow-Origin: *
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Date: Sun, 07 Apr 2013 05:45:45 GMT
+</responseHeader>
+      <requestHeader class="java.lang.String">X-Published-By: auto-test
+X-Processed-By: auto-test
+Content-Type: text/xml
+</requestHeader>
+      <responseData class="java.lang.String">&lt;schema-definition xmlns=&quot;http://www.mtvi.com/jcr/1.0&quot; name=&quot;i_schema_2_Test&quot; version=&quot;lates1365313545644&quot;&gt;
+  &lt;field-type name=&quot;i_schema_2_Test:String&quot; descr=&quot;A string of unqualified length.&quot; base-type=&quot;string&quot;/&gt;
+  &lt;content-type name=&quot;i_schema_2_Test:ContentType2&quot; descr=&quot;ContentType From i_schema_2_Test&quot; abs=&quot;false&quot; top=&quot;true&quot; policy=&quot;false&quot;&gt;
+    &lt;field name=&quot;field1&quot; required=&quot;true&quot; field-type=&quot;i_schema_2_Test:String&quot;/&gt;
+    &lt;field name=&quot;field2&quot; required=&quot;false&quot; field-type=&quot;i_schema_2_Test:String&quot;/&gt;
+    &lt;field name=&quot;field3&quot; required=&quot;true&quot; field-type=&quot;i_schema_2_Test:String&quot;/&gt;
+  &lt;/content-type&gt;
+&lt;/schema-definition&gt;</responseData>
+      <responseFile class="java.lang.String"></responseFile>
+      <cookies class="java.lang.String"></cookies>
+      <method class="java.lang.String">POST</method>
+      <queryString class="java.lang.String"></queryString>
+      <java.net.URL>http://localhost:12542/uca/v2/schema/release/i_schema_2_Test.xml?version=lates1365313545644</java.net.URL>
+    </httpSample>
+    <httpSample t="75" lt="75" ts="1365313545657" s="true" lb="Update Main Schema" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" de="" by="263" hn="Dzmitrys-MacBook-Pro.local">
+      <assertionResult>
+        <name>Response Assertion [code = 200]</name>
+        <failure>false</failure>
+        <error>false</error>
+      </assertionResult>
+      <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Powered-By: Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0
+Access-Control-Allow-Origin: *
+Content-Type: text/xml
+Content-Length: 0
+Date: Sun, 07 Apr 2013 05:45:45 GMT
+</responseHeader>
+      <requestHeader class="java.lang.String">X-Published-By: auto-test
+X-Processed-By: auto-test
+Content-Type: text/xml
+</requestHeader>
+      <responseData class="java.lang.String"></responseData>
+      <responseFile class="java.lang.String"></responseFile>
+      <cookies class="java.lang.String"></cookies>
+      <method class="java.lang.String">PUT</method>
+      <queryString class="java.lang.String">&lt;schema-definition xmlns=&quot;http://www.mtvi.com/jcr/1.0&quot; name=&quot;m_schema_Test&quot;&gt;   &lt;imports name=&quot;i_schema_2_Test&quot;   version=&quot;lates1365313545644&quot; /&gt;   &lt;field-type name=&quot;m_schema_Test:String&quot;   descr=&quot;A string of unqualified length.&quot; base-type=&quot;string&quot; /&gt;   &lt;content-type name=&quot;m_schema_Test:ContentType3&quot;   descr=&quot;ContentType From m_schema_Test&quot; abs=&quot;false&quot; top=&quot;true&quot;&gt;     &lt;field name=&quot;field1&quot; required=&quot;true&quot;     field-type=&quot;m_schema_Test:String&quot; /&gt;     &lt;field name=&quot;field2&quot; required=&quot;false&quot;     field-type=&quot;m_schema_Test:String&quot; /&gt;   &lt;/content-type&gt; &lt;/schema-definition&gt; </queryString>
+      <java.net.URL>http://localhost:12542/uca/v2/schema/definition/m_schema_Test.xml</java.net.URL>
+    </httpSample>
+    <httpSample t="7" lt="7" ts="1365313545733" s="true" lb="Update source environment" rc="200" rm="OK" tn="Thread Group 1-1" dt="" de="" by="943" hn="Dzmitrys-MacBook-Pro.local">
+      <assertionResult>
+        <name>Response Assertion [code = 200]</name>
+        <failure>false</failure>
+        <error>false</error>
+      </assertionResult>
+      <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Powered-By: Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0
+Access-Control-Allow-Origin: *
+Transfer-Encoding: chunked
+Date: Sun, 07 Apr 2013 05:45:45 GMT
+</responseHeader>
+      <requestHeader class="java.lang.String">X-Published-By: auto-test
+X-Processed-By: auto-test
+Content-Type: text/xml
+</requestHeader>
+      <responseData class="java.lang.String"/>
+      <responseFile class="java.lang.String"></responseFile>
+      <cookies class="java.lang.String"></cookies>
+      <method class="java.lang.String">PUT</method>
+      <queryString class="java.lang.String">&lt;content-environment env-group=&quot;default&quot; xmlns=&quot;http://www.mtvi.com/jcr/1.0&quot; name=&quot;crx-1862-test-env&quot; created-by=&quot;me&quot; read-only=&quot;false&quot; pub-restricted=&quot;false&quot;&gt;   &lt;schema-ref name=&quot;m_schema_Test&quot;/&gt;   &lt;schema-ref name=&quot;i_schema_2_Test&quot; version=&quot;lates1365313545644&quot;/&gt;   &lt;schema-ref name=&quot;i_schema_1_Test&quot; version=&quot;lates1365313545258&quot;/&gt; &lt;/content-environment&gt; </queryString>
+      <java.net.URL>http://localhost:12542/uca/v2/environment/crx-1862-test-env.xml</java.net.URL>
+    </httpSample>
+    <httpSample t="7" lt="6" ts="1365313545741" s="true" lb="Update Content Namespace" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" de="" by="771" hn="Dzmitrys-MacBook-Pro.local">
+      <assertionResult>
+        <name>Response Assertion [code = 200]</name>
+        <failure>false</failure>
+        <error>false</error>
+      </assertionResult>
+      <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Powered-By: Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0
+Access-Control-Allow-Origin: *
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Date: Sun, 07 Apr 2013 05:45:45 GMT
+</responseHeader>
+      <requestHeader class="java.lang.String">X-Published-By: auto-test
+X-Processed-By: auto-test
+Content-Type: text/xml
+</requestHeader>
+      <responseData class="java.lang.String">&lt;content-namespace xmlns=&quot;http://www.mtvi.com/jcr/1.0&quot; name=&quot;namespace2&quot; href=&quot;/uca/v2/content/crx-1862-test-env.xml?contentnamespace=namespace2&quot; date-created=&quot;2013-03-31T08:31:17.437Z&quot; created-by=&quot;auto-test&quot; date-updated=&quot;2013-04-07T05:45:45.747Z&quot; updated-by=&quot;auto-test&quot;&gt;
+  &lt;cn-schema-reference&gt;
+    &lt;type-template&gt;m_schema_Test:*&lt;/type-template&gt;
+    &lt;type-template&gt;i_schema_2_Test:*&lt;/type-template&gt;
+    &lt;type-template&gt;i_schema_1_Test:*&lt;/type-template&gt;
+  &lt;/cn-schema-reference&gt;
+&lt;/content-namespace&gt;</responseData>
+      <responseFile class="java.lang.String"></responseFile>
+      <cookies class="java.lang.String"></cookies>
+      <method class="java.lang.String">PUT</method>
+      <queryString class="java.lang.String">&lt;content-namespace xmlns=&quot;http://www.mtvi.com/jcr/1.0&quot; name=&quot;namespace2&quot; max-items-per-container=&quot;100&quot; href=&quot;/uca/v2/content/crx-1862-test-env.xml&quot;&gt;   &lt;cn-schema-reference name=&quot;m_schema_Test&quot;  &gt;     &lt;type-template&gt;m_schema_Test:*&lt;/type-template&gt; 	&lt;type-template&gt;i_schema_2_Test:*&lt;/type-template&gt; 	&lt;type-template&gt;i_schema_1_Test:*&lt;/type-template&gt;   &lt;/cn-schema-reference&gt; &lt;/content-namespace&gt;</queryString>
+      <java.net.URL>http://localhost:12542/uca/v2/content-namespace/crx-1862-test-env/namespace2.xml</java.net.URL>
+    </httpSample>
+    <httpSample t="10" lt="10" ts="1365313545749" s="true" lb="Update content-records" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" de="" by="263" hn="Dzmitrys-MacBook-Pro.local">
+      <assertionResult>
+        <name>Response Assertion [code = 200]</name>
+        <failure>false</failure>
+        <error>false</error>
+      </assertionResult>
+      <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Powered-By: Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0
+Access-Control-Allow-Origin: *
+Content-Type: text/xml
+Content-Length: 0
+Date: Sun, 07 Apr 2013 05:45:45 GMT
+</responseHeader>
+      <requestHeader class="java.lang.String">X-Published-By: auto-test
+X-Processed-By: auto-test
+Content-Type: text/xml
+</requestHeader>
+      <responseData class="java.lang.String"></responseData>
+      <responseFile class="java.lang.String"></responseFile>
+      <cookies class="java.lang.String"></cookies>
+      <method class="java.lang.String">PUT</method>
+      <queryString class="java.lang.String">&lt;content-list xmlns=&quot;http://www.mtvi.com/jcr/1.0&quot;&gt;   &lt;content-record content-namespace=&quot;namespace2&quot; content-type=&quot;i_schema_2_Test:ContentType2&quot;   mgid=&quot;jcr:content:namespace2:0b89a563-fe47-4f00-b5cb-713d61ea5869&quot;   url-key=&quot;/uca/v2/content/crx-1862-test-env/0b89a563-fe47-4f00-b5cb-713d61ea5869&quot;   created-by=&quot;test&quot;&gt;     &lt;field name=&quot;field1&quot; type=&quot;string&quot;&gt;Field3 Value&lt;/field&gt;     &lt;field name=&quot;field2&quot; type=&quot;string&quot;&gt;Field4 Value&lt;/field&gt; 	&lt;field name=&quot;field3&quot; type=&quot;string&quot;&gt;LLL&lt;/field&gt;   &lt;/content-record&gt;   &lt;/content-list&gt;</queryString>
+      <java.net.URL>http://localhost:12542/uca/v2/content/crx-1862-test-env.xml</java.net.URL>
+    </httpSample>
+    <httpSample t="20" lt="20" ts="1365313545760" s="true" lb="Find CR2_ID Record" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" de="" by="1098" hn="Dzmitrys-MacBook-Pro.local">
+      <assertionResult>
+        <name>Response Assertion</name>
+        <failure>false</failure>
+        <error>false</error>
+      </assertionResult>
+      <assertionResult>
+        <name>XPath Assertion</name>
+        <failure>false</failure>
+        <error>false</error>
+        <failureMessage></failureMessage>
+      </assertionResult>
+      <assertionResult>
+        <name>XPath Assertion</name>
+        <failure>false</failure>
+        <error>false</error>
+        <failureMessage></failureMessage>
+      </assertionResult>
+      <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Powered-By: Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0
+Access-Control-Allow-Origin: *
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Date: Sun, 07 Apr 2013 05:45:45 GMT
+</responseHeader>
+      <requestHeader class="java.lang.String">X-Published-By: auto-test
+X-Processed-By: auto-test
+Content-Type: text/xml
+</requestHeader>
+      <responseData class="java.lang.String">&lt;content-record xmlns=&quot;http://www.mtvi.com/jcr/1.0&quot; content-type=&quot;i_schema_2_Test:ContentType2&quot; id=&quot;0b89a563-fe47-4f00-b5cb-713d61ea5869&quot; href=&quot;/uca/v2/content/crx-1862-test-env/0b89a563-fe47-4f00-b5cb-713d61ea5869.xml&quot; mgid=&quot;arc:content:crx-1862-test-env:0b89a563-fe47-4f00-b5cb-713d61ea5869&quot; content-namespace=&quot;namespace2&quot; url-key=&quot;/uca/v2/content/crx-1862-test-env/0b89a563-fe47-4f00-b5cb-713d61ea5869&quot; short-id=&quot;xqty52&quot; status=&quot;DEFAULT&quot; date-created=&quot;2013-04-07T05:45:45.523Z&quot; created-by=&quot;auto-test&quot; date-updated=&quot;2013-04-07T05:45:45.755Z&quot; updated-by=&quot;auto-test&quot; schema-saved-for=&quot;i_schema_2_Test:lates1365313545644&quot; revision-original=&quot;1&quot;&gt;
+  &lt;field name=&quot;field1&quot; type=&quot;string&quot;&gt;Field3 Value&lt;/field&gt;
+  &lt;field name=&quot;field2&quot; type=&quot;string&quot;&gt;Field4 Value&lt;/field&gt;
+  &lt;field name=&quot;field3&quot; type=&quot;string&quot;&gt;LLL&lt;/field&gt;
+&lt;/content-record&gt;</responseData>
+      <responseFile class="java.lang.String"></responseFile>
+      <cookies class="java.lang.String"></cookies>
+      <method class="java.lang.String">GET</method>
+      <queryString class="java.lang.String"></queryString>
+      <java.net.URL>http://localhost:12542/uca/v2/content/crx-1862-test-env/0b89a563-fe47-4f00-b5cb-713d61ea5869.xml</java.net.URL>
+    </httpSample>
+    <responseHeader class="java.lang.String"></responseHeader>
+    <requestHeader class="java.lang.String"></requestHeader>
+    <responseData class="java.lang.String"/>
+    <responseFile class="java.lang.String"></responseFile>
+  </sample>
+  <sample t="21" lt="0" ts="1365313545784" s="true" lb="Postconditions" rc="200" rm="Number of samples in transaction : 3, number of failing samples : 0" tn="Thread Group 1-1" dt="" de="" by="816" hn="Dzmitrys-MacBook-Pro.local">
+    <httpSample t="6" lt="6" ts="1365313545784" s="true" lb="Remove CR_ID1" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" de="" by="272" hn="Dzmitrys-MacBook-Pro.local">
+      <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Powered-By: Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0
+Access-Control-Allow-Origin: *
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Date: Sun, 07 Apr 2013 05:45:45 GMT
+</responseHeader>
+      <requestHeader class="java.lang.String">X-Published-By: auto-test
+X-Processed-By: auto-test
+Content-Type: text/xml
+</requestHeader>
+      <responseData class="java.lang.String"></responseData>
+      <responseFile class="java.lang.String"></responseFile>
+      <cookies class="java.lang.String"></cookies>
+      <method class="java.lang.String">DELETE</method>
+      <queryString class="java.lang.String"></queryString>
+      <java.net.URL>http://localhost:12542/uca/v2/content/crx-1862-test-env/dc45d28e-8bef-471a-bd24-02e567a4def7</java.net.URL>
+    </httpSample>
+    <httpSample t="6" lt="6" ts="1365313545792" s="true" lb="Remove CR_ID2" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" de="" by="272" hn="Dzmitrys-MacBook-Pro.local">
+      <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Powered-By: Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0
+Access-Control-Allow-Origin: *
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Date: Sun, 07 Apr 2013 05:45:45 GMT
+</responseHeader>
+      <requestHeader class="java.lang.String">X-Published-By: auto-test
+X-Processed-By: auto-test
+Content-Type: text/xml
+</requestHeader>
+      <responseData class="java.lang.String"></responseData>
+      <responseFile class="java.lang.String"></responseFile>
+      <cookies class="java.lang.String"></cookies>
+      <method class="java.lang.String">DELETE</method>
+      <queryString class="java.lang.String"></queryString>
+      <java.net.URL>http://localhost:12542/uca/v2/content/crx-1862-test-env/0b89a563-fe47-4f00-b5cb-713d61ea5869</java.net.URL>
+    </httpSample>
+    <httpSample t="6" lt="6" ts="1365313545799" s="true" lb="Remove CR_ID3" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" de="" by="272" hn="Dzmitrys-MacBook-Pro.local">
+      <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Powered-By: Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0
+Access-Control-Allow-Origin: *
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Date: Sun, 07 Apr 2013 05:45:45 GMT
+</responseHeader>
+      <requestHeader class="java.lang.String">X-Published-By: auto-test
+X-Processed-By: auto-test
+Content-Type: text/xml
+</requestHeader>
+      <responseData class="java.lang.String"></responseData>
+      <responseFile class="java.lang.String"></responseFile>
+      <cookies class="java.lang.String"></cookies>
+      <method class="java.lang.String">DELETE</method>
+      <queryString class="java.lang.String"></queryString>
+      <java.net.URL>http://localhost:12542/uca/v2/content/crx-1862-test-env/6b905a63-6e7a-42ec-a37e-8801953bf10a</java.net.URL>
+    </httpSample>
+    <responseHeader class="java.lang.String"></responseHeader>
+    <requestHeader class="java.lang.String"></requestHeader>
+    <responseData class="java.lang.String"/>
+    <responseFile class="java.lang.String"></responseFile>
+  </sample>
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String"/>
+  <responseFile class="java.lang.String"></responseFile>
+</sample>
+
+</testResults>

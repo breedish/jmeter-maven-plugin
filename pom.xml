@@ -71,6 +71,11 @@
             <artifactId>jetty-util</artifactId>
             <version>6.1.16</version>
         </dependency>
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.19</version>
+        </dependency>
         <!-- JMeter dependencies -->
         <dependency>
             <groupId>org.apache.jmeter</groupId>

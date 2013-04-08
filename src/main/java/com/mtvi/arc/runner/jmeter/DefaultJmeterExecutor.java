@@ -3,7 +3,7 @@ package com.mtvi.arc.runner.jmeter;
 import com.google.common.io.NullOutputStream;
 import com.mtvi.arc.config.ExecutionConfig;
 import com.mtvi.arc.domain.SystemTest;
-import com.mtvi.arc.domain.SystemTestResult;
+import com.mtvi.arc.domain.result.SystemTestResult;
 import com.mtvi.arc.runner.Executor;
 import org.apache.jmeter.JMeter;
 

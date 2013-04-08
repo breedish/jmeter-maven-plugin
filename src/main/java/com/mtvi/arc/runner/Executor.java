@@ -1,7 +1,7 @@
 package com.mtvi.arc.runner;
 
 import com.mtvi.arc.domain.SystemTest;
-import com.mtvi.arc.domain.SystemTestResult;
+import com.mtvi.arc.domain.result.SystemTestResult;
 
 /**
  * Executor class.

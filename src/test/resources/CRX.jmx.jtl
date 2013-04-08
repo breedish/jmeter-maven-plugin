@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testResults version="1.2">
+<httpSample t="72" lt="72" ts="1365187789786" s="true" lb="Create schema definition" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" de="" by="263" hn="Dzmitrys-MacBook-Pro.local">
+  <assertionResult>
+    <name>Response Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Powered-By: Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0
+Access-Control-Allow-Origin: *
+Content-Type: text/xml
+Content-Length: 0
+Date: Fri, 05 Apr 2013 18:49:49 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">X-Published-By: auto-test
+X-Processed-By: auto-test
+Content-Type: text/xml
+</requestHeader>
+  <responseData class="java.lang.String"></responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">PUT</method>
+  <queryString class="java.lang.String">&lt;actual file content, not shown here&gt;</queryString>
+  <java.net.URL>http://localhost:12542/uca/v2/schema/definition/Auto_Test.xml</java.net.URL>
+</httpSample>
+<httpSample t="7" lt="6" ts="1365187789858" s="true" lb="Create environment" rc="200" rm="OK" tn="Thread Group 1-1" dt="" de="" by="644" hn="Dzmitrys-MacBook-Pro.local">
+  <assertionResult>
+    <name>Response Assertion [code = 200]</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Powered-By: Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0
+Access-Control-Allow-Origin: *
+Transfer-Encoding: chunked
+Date: Fri, 05 Apr 2013 18:49:49 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">X-Published-By: auto-test
+X-Processed-By: auto-test
+Content-Type: text/xml
+</requestHeader>
+  <responseData class="java.lang.String"/>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">PUT</method>
+  <queryString class="java.lang.String">&lt;content-environment env-group=&quot;default&quot; xmlns=&quot;http://www.mtvi.com/jcr/1.0&quot; name=&quot;crx-2218-env-name-test&quot; created-by=&quot;me&quot; read-only=&quot;false&quot; pub-restricted=&quot;false&quot;&gt;   &lt;schema-ref name=&quot;Auto_Test&quot;/&gt; &lt;/content-environment&gt; </queryString>
+  <java.net.URL>http://localhost:12542/uca/v2/environment/crx-2218-env-name-test.xml</java.net.URL>
+</httpSample>
+<httpSample t="6" lt="6" ts="1365187789865" s="true" lb="Create other environment" rc="200" rm="OK" tn="Thread Group 1-1" dt="" de="" by="695" hn="Dzmitrys-MacBook-Pro.local">
+  <assertionResult>
+    <name>Response Assertion [code = 200]</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Powered-By: Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0
+Access-Control-Allow-Origin: *
+Transfer-Encoding: chunked
+Date: Fri, 05 Apr 2013 18:49:49 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">X-Published-By: auto-test
+X-Processed-By: auto-test
+Content-Type: text/xml
+</requestHeader>
+  <responseData class="java.lang.String"/>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">PUT</method>
+  <queryString class="java.lang.String">&lt;content-environment env-group=&quot;default&quot; xmlns=&quot;http://www.mtvi.com/jcr/1.0&quot; name=&quot;crx-2218-env-name2-test&quot; created-by=&quot;me&quot; read-only=&quot;true&quot; pub-restricted=&quot;false&quot;&gt;    &lt;schema-ref name=&quot;Auto_Test&quot;/&gt; &lt;/content-environment&gt; </queryString>
+  <java.net.URL>http://localhost:12542/uca/v2/environment/crx-2218-env-name2-test.xml</java.net.URL>
+</httpSample>
+<httpSample t="9" lt="9" ts="1365187789872" s="true" lb="Create namespace" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" de="" by="682" hn="Dzmitrys-MacBook-Pro.local">
+  <assertionResult>
+    <name>Response Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <assertionResult>
+    <name>XML Schema Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Powered-By: Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0
+Access-Control-Allow-Origin: *
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Date: Fri, 05 Apr 2013 18:49:49 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">X-Published-By: auto-test
+X-Processed-By: auto-test
+Content-Type: text/xml
+</requestHeader>
+  <responseData class="java.lang.String">&lt;content-namespace xmlns=&quot;http://www.mtvi.com/jcr/1.0&quot; name=&quot;autotest_namespace&quot; href=&quot;/uca/v2/content/crx-2218-env-name-test.xml?contentnamespace=autotest_namespace&quot; date-created=&quot;2013-03-31T10:09:55.253Z&quot; created-by=&quot;auto-test&quot; date-updated=&quot;2013-04-05T18:49:49.880Z&quot; updated-by=&quot;auto-test&quot;&gt;
+  &lt;cn-schema-reference&gt;
+    &lt;type-template&gt;Auto_Test:*&lt;/type-template&gt;
+  &lt;/cn-schema-reference&gt;
+&lt;/content-namespace&gt;</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">PUT</method>
+  <queryString class="java.lang.String">&lt;content-namespace name=&quot;autotest_namespace&quot;&gt;&lt;cn-schema-reference name=&quot;Auto_Test&quot;&gt; &lt;type-template&gt;Auto_Test:*&lt;/type-template&gt; &lt;/cn-schema-reference&gt;  &lt;/content-namespace&gt;</queryString>
+  <java.net.URL>http://localhost:12542/uca/v2/content-namespace/crx-2218-env-name-test/autotest_namespace.xml</java.net.URL>
+</httpSample>
+<httpSample t="3" lt="3" ts="1365187789885" s="true" lb="Generate MGID" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" de="" by="318" hn="Dzmitrys-MacBook-Pro.local">
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Powered-By: Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0
+Content-Type: text/plain
+Transfer-Encoding: chunked
+Date: Fri, 05 Apr 2013 18:49:49 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">X-Published-By: auto-test
+X-Processed-By: auto-test
+Content-Type: text/xml
+</requestHeader>
+  <responseData class="java.lang.String">mgid:arc:content:crx-2218-env-name-test:86e02cc1-dc1e-4fcf-b3b8-960628d705f6</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">new</queryString>
+  <java.net.URL>http://localhost:12542/ucsa/v2/mgid/jcr/content/crx-2218-env-name-test</java.net.URL>
+</httpSample>
+<httpSample t="18" lt="17" ts="1365187789889" s="true" lb="Generate CR" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" de="" by="842" hn="Dzmitrys-MacBook-Pro.local">
+  <assertionResult>
+    <name>Response Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Powered-By: Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Date: Fri, 05 Apr 2013 18:49:49 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">X-Published-By: auto-test
+X-Processed-By: auto-test
+Content-Type: text/xml
+</requestHeader>
+  <responseData class="java.lang.String">&lt;Base contentType=&quot;Auto_Test:Base&quot; globalId=&quot;86e02cc1-dc1e-4fcf-b3b8-960628d705f6&quot; environment=&quot;crx-2218-env-name-test&quot; namespace=&quot;autotest_namespace&quot; errorCount=&quot;0&quot; warningCount=&quot;0&quot; foreignId=&quot;mgid:arc:content:crx-2218-env-name-test:86e02cc1-dc1e-4fcf-b3b8-960628d705f6&quot; urlKey=&quot;urlKey1&quot; shortId=&quot;v1ktdn&quot; status=&quot;DEFAULT&quot; dateCreated=&quot;2013-04-05T18:49:49.898Z&quot; createdBy=&quot;auto-test&quot; lastModified=&quot;2013-04-05T18:49:49.898Z&quot; lastModifiedBy=&quot;auto-test&quot; schemaSavedFor=&quot;Auto_Test:latest&quot;&gt;
+  &lt;fieldName&gt;name&lt;/fieldName&gt;
+  &lt;fieldListName&gt;
+    &lt;Item&gt;one&lt;/Item&gt;
+    &lt;Item&gt;two&lt;/Item&gt;
+  &lt;/fieldListName&gt;
+&lt;/Base&gt;</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">PUT</method>
+  <queryString class="java.lang.String">&lt;Base contentType=&quot;Auto_Test:Base&quot; globalId=&quot;86e02cc1-dc1e-4fcf-b3b8-960628d705f6&quot; namespace=&quot;autotest_namespace&quot; urlKey=&quot;urlKey1&quot;&gt;   &lt;fieldListName&gt;   &lt;Item&gt;one&lt;/Item&gt;   &lt;Item&gt;two&lt;/Item&gt;  &lt;/fieldListName&gt; &lt;fieldName&gt;name&lt;/fieldName&gt; &lt;/Base&gt; </queryString>
+  <java.net.URL>http://localhost:12542/ucsa/v2/mgid/jcr/content/crx-2218-env-name-test/86e02cc1-dc1e-4fcf-b3b8-960628d705f6</java.net.URL>
+</httpSample>
+<httpSample t="10" lt="10" ts="1365187789907" s="true" lb="First find CR in other environment" rc="404" rm="Not Found" tn="Thread Group 1-1" dt="text" de="" by="9619" hn="Dzmitrys-MacBook-Pro.local">
+  <assertionResult>
+    <name>Response Assertion [code = 404]</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <responseHeader class="java.lang.String">HTTP/1.1 404 Not Found
+Server: Apache-Coyote/1.1
+X-Powered-By: Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0
+Access-Control-Allow-Origin: *
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Date: Fri, 05 Apr 2013 18:49:49 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">X-Published-By: auto-test
+X-Processed-By: auto-test
+Content-Type: text/xml
+</requestHeader>
+  <responseData class="java.lang.String">&lt;error xmlns=&quot;http://www.mtvi.com/jcr/1.0&quot;&gt;
+  &lt;summary&gt; There is no Content Record found under the Content Environment with ID: arc:content:crx-2218-env-name2-test:86e02cc1-dc1e-4fcf-b3b8-960628d705f6 &lt;/summary&gt;
+  &lt;description&gt;com.mtvi.osiris2.api.domain.content.ContentNotFoundException:  There is no Content Record found under the Content Environment with ID: arc:content:crx-2218-env-name2-test:86e02cc1-dc1e-4fcf-b3b8-960628d705f6
+	at com.mtvi.osiris2.ca.core.service.DefaultContentRecordsService.getIndividualContentRecord(DefaultContentRecordsService.java:219)
+	at sun.reflect.GeneratedMethodAccessor95.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:318)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:196)
+	at com.sun.proxy.$Proxy41.getIndividualContentRecord(Unknown Source)
+	at sun.reflect.GeneratedMethodAccessor95.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:318)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:196)
+	at com.sun.proxy.$Proxy41.getIndividualContentRecord(Unknown Source)
+	at com.mtvi.osiris2.rest.controller.ca.ContentAccessController.getIndividualContentRecord(ContentAccessController.java:289)
+	at com.mtvi.osiris2.rest.controller.ca.ContentAccessController.getIndividualContentRecord(ContentAccessController.java:191)
+	at com.mtvi.osiris2.rest.controller.ca.ContentAccessController$$FastClassByCGLIB$$d37caf1b.invoke(&amp;lt;generated&amp;gt;)
+	at net.sf.cglib.proxy.MethodProxy.invoke(MethodProxy.java:149)
+	at org.springframework.aop.framework.Cglib2AopProxy$CglibMethodInvocation.invokeJoinpoint(Cglib2AopProxy.java:689)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:150)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:80)
+	at com.mtvi.osiris2.monitoring.aop.MonitorAspect.monitor(MonitorAspect.java:48)
+	at sun.reflect.GeneratedMethodAccessor84.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:621)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:610)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:65)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:161)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:90)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:172)
+	at org.springframework.aop.framework.Cglib2AopProxy$DynamicAdvisedInterceptor.intercept(Cglib2AopProxy.java:622)
+	at com.mtvi.osiris2.rest.controller.ca.ContentAccessController$$EnhancerByCGLIB$$132b7e17.getIndividualContentRecord(&amp;lt;generated&amp;gt;)
+	at sun.reflect.GeneratedMethodAccessor99.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.springframework.web.bind.annotation.support.HandlerMethodInvoker.invokeHandlerMethod(HandlerMethodInvoker.java:176)
+	at org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter.invokeHandlerMethod(AnnotationMethodHandlerAdapter.java:436)
+	at org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter.handle(AnnotationMethodHandlerAdapter.java:424)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:900)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:827)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:882)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:778)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:690)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:803)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at com.mtvnet.platform.util.HttpServletObjectsHolderFilter.doFilter(HttpServletObjectsHolderFilter.java:46)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at com.mtvi.osiris2.filter.MethodOverrideFilter.doFilterInternal(MethodOverrideFilter.java:65)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at com.mtvi.osiris2.filter.CORSEnablingRequestFilter.doFilterInternal(CORSEnablingRequestFilter.java:73)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at com.mtvi.osiris2.filter.FormRequestForwardFilter.doFilterInternal(FormRequestForwardFilter.java:45)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at com.mtvi.osiris2.RequestFilter.doFilterInternal(RequestFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at com.mtvi.osiris2.monitoring.MonitorFilter.doFilterInternal(MonitorFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.jboss.web.tomcat.filters.ReplyHeaderFilter.doFilter(ReplyHeaderFilter.java:96)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:230)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:175)
+	at org.jboss.web.tomcat.security.SecurityAssociationValve.invoke(SecurityAssociationValve.java:182)
+	at org.jboss.web.tomcat.security.JaccContextValve.invoke(JaccContextValve.java:84)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.jboss.web.tomcat.service.jca.CachedConnectionValve.invoke(CachedConnectionValve.java:157)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:262)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:844)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:446)
+	at java.lang.Thread.run(Thread.java:680)
+Caused by: com.mtvi.osiris2.api.domain.content.ContentNotFoundException:  Content Record is not found by ID [86e02cc1-dc1e-4fcf-b3b8-960628d705f6]
+	at com.mtvi.osiris2.api.mongodb.content.env.MongoContentEnvironment.getContentRecord_aroundBody2(MongoContentEnvironment.java:339)
+	at com.mtvi.osiris2.api.mongodb.content.env.MongoContentEnvironment.getContentRecord_aroundBody3$advice(MongoContentEnvironment.java:47)
+	at com.mtvi.osiris2.api.mongodb.content.env.MongoContentEnvironment.getContentRecord(MongoContentEnvironment.java:1)
+	at com.mtvi.osiris2.ca.core.service.DefaultContentRecordsService.getIndividualContentRecord(DefaultContentRecordsService.java:163)
+	at com.mtvi.osiris2.ca.core.service.DefaultContentRecordsService.getIndividualContentRecord(DefaultContentRecordsService.java:142)
+	at com.mtvi.osiris2.ca.core.service.DefaultContentRecordsService.getIndividualContentRecord(DefaultContentRecordsService.java:202)
+	... 84 more
+&lt;/description&gt;
+&lt;/error&gt;</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://localhost:12542/uca/v2/content/crx-2218-env-name2-test/86e02cc1-dc1e-4fcf-b3b8-960628d705f6.xml</java.net.URL>
+</httpSample>
+<httpSample t="8" lt="8" ts="1365187789918" s="true" lb="Find CR in source namespace" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" de="" by="1041" hn="Dzmitrys-MacBook-Pro.local">
+  <assertionResult>
+    <name>Response Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <assertionResult>
+    <name>XML Schema Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <assertionResult>
+    <name>XPath Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+    <failureMessage></failureMessage>
+  </assertionResult>
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Powered-By: Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0
+Access-Control-Allow-Origin: *
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Date: Fri, 05 Apr 2013 18:49:49 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">X-Published-By: auto-test
+X-Processed-By: auto-test
+Content-Type: text/xml
+</requestHeader>
+  <responseData class="java.lang.String">&lt;content-record xmlns=&quot;http://www.mtvi.com/jcr/1.0&quot; content-type=&quot;Auto_Test:Base&quot; id=&quot;86e02cc1-dc1e-4fcf-b3b8-960628d705f6&quot; href=&quot;/uca/v2/content/crx-2218-env-name-test/86e02cc1-dc1e-4fcf-b3b8-960628d705f6.xml&quot; mgid=&quot;arc:content:crx-2218-env-name-test:86e02cc1-dc1e-4fcf-b3b8-960628d705f6&quot; content-namespace=&quot;autotest_namespace&quot; url-key=&quot;urlKey1&quot; short-id=&quot;v1ktdn&quot; status=&quot;DEFAULT&quot; date-created=&quot;2013-04-05T18:49:49.898Z&quot; created-by=&quot;auto-test&quot; date-updated=&quot;2013-04-05T18:49:49.898Z&quot; updated-by=&quot;auto-test&quot; schema-saved-for=&quot;Auto_Test:latest&quot; revision-original=&quot;0&quot;&gt;
+  &lt;field-list name=&quot;fieldListName&quot; type=&quot;string&quot;&gt;
+    &lt;field-item&gt;one&lt;/field-item&gt;
+    &lt;field-item&gt;two&lt;/field-item&gt;
+  &lt;/field-list&gt;
+  &lt;field name=&quot;fieldName&quot; type=&quot;string&quot;&gt;name&lt;/field&gt;
+&lt;/content-record&gt;</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://localhost:12542/uca/v2/content/crx-2218-env-name-test/86e02cc1-dc1e-4fcf-b3b8-960628d705f6.xml?contentnamespace=autotest_namespace</java.net.URL>
+</httpSample>
+<httpSample t="12" lt="12" ts="1365187789934" s="true" lb="Second find CR in other environment" rc="404" rm="Not Found" tn="Thread Group 1-1" dt="text" de="" by="9619" hn="Dzmitrys-MacBook-Pro.local">
+  <assertionResult>
+    <name>Response Assertion [code = 404]</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <responseHeader class="java.lang.String">HTTP/1.1 404 Not Found
+Server: Apache-Coyote/1.1
+X-Powered-By: Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0
+Access-Control-Allow-Origin: *
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Date: Fri, 05 Apr 2013 18:49:49 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">X-Published-By: auto-test
+X-Processed-By: auto-test
+Content-Type: text/xml
+</requestHeader>
+  <responseData class="java.lang.String">&lt;error xmlns=&quot;http://www.mtvi.com/jcr/1.0&quot;&gt;
+  &lt;summary&gt; There is no Content Record found under the Content Environment with ID: arc:content:crx-2218-env-name2-test:86e02cc1-dc1e-4fcf-b3b8-960628d705f6 &lt;/summary&gt;
+  &lt;description&gt;com.mtvi.osiris2.api.domain.content.ContentNotFoundException:  There is no Content Record found under the Content Environment with ID: arc:content:crx-2218-env-name2-test:86e02cc1-dc1e-4fcf-b3b8-960628d705f6
+	at com.mtvi.osiris2.ca.core.service.DefaultContentRecordsService.getIndividualContentRecord(DefaultContentRecordsService.java:219)
+	at sun.reflect.GeneratedMethodAccessor95.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:318)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:196)
+	at com.sun.proxy.$Proxy41.getIndividualContentRecord(Unknown Source)
+	at sun.reflect.GeneratedMethodAccessor95.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:318)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:196)
+	at com.sun.proxy.$Proxy41.getIndividualContentRecord(Unknown Source)
+	at com.mtvi.osiris2.rest.controller.ca.ContentAccessController.getIndividualContentRecord(ContentAccessController.java:289)
+	at com.mtvi.osiris2.rest.controller.ca.ContentAccessController.getIndividualContentRecord(ContentAccessController.java:191)
+	at com.mtvi.osiris2.rest.controller.ca.ContentAccessController$$FastClassByCGLIB$$d37caf1b.invoke(&amp;lt;generated&amp;gt;)
+	at net.sf.cglib.proxy.MethodProxy.invoke(MethodProxy.java:149)
+	at org.springframework.aop.framework.Cglib2AopProxy$CglibMethodInvocation.invokeJoinpoint(Cglib2AopProxy.java:689)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:150)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:80)
+	at com.mtvi.osiris2.monitoring.aop.MonitorAspect.monitor(MonitorAspect.java:48)
+	at sun.reflect.GeneratedMethodAccessor84.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:621)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:610)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:65)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:161)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:90)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:172)
+	at org.springframework.aop.framework.Cglib2AopProxy$DynamicAdvisedInterceptor.intercept(Cglib2AopProxy.java:622)
+	at com.mtvi.osiris2.rest.controller.ca.ContentAccessController$$EnhancerByCGLIB$$132b7e17.getIndividualContentRecord(&amp;lt;generated&amp;gt;)
+	at sun.reflect.GeneratedMethodAccessor99.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.springframework.web.bind.annotation.support.HandlerMethodInvoker.invokeHandlerMethod(HandlerMethodInvoker.java:176)
+	at org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter.invokeHandlerMethod(AnnotationMethodHandlerAdapter.java:436)
+	at org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter.handle(AnnotationMethodHandlerAdapter.java:424)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:900)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:827)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:882)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:778)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:690)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:803)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at com.mtvnet.platform.util.HttpServletObjectsHolderFilter.doFilter(HttpServletObjectsHolderFilter.java:46)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at com.mtvi.osiris2.filter.MethodOverrideFilter.doFilterInternal(MethodOverrideFilter.java:65)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at com.mtvi.osiris2.filter.CORSEnablingRequestFilter.doFilterInternal(CORSEnablingRequestFilter.java:73)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at com.mtvi.osiris2.filter.FormRequestForwardFilter.doFilterInternal(FormRequestForwardFilter.java:45)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at com.mtvi.osiris2.RequestFilter.doFilterInternal(RequestFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at com.mtvi.osiris2.monitoring.MonitorFilter.doFilterInternal(MonitorFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.jboss.web.tomcat.filters.ReplyHeaderFilter.doFilter(ReplyHeaderFilter.java:96)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:230)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:175)
+	at org.jboss.web.tomcat.security.SecurityAssociationValve.invoke(SecurityAssociationValve.java:182)
+	at org.jboss.web.tomcat.security.JaccContextValve.invoke(JaccContextValve.java:84)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.jboss.web.tomcat.service.jca.CachedConnectionValve.invoke(CachedConnectionValve.java:157)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:262)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:844)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:446)
+	at java.lang.Thread.run(Thread.java:680)
+Caused by: com.mtvi.osiris2.api.domain.content.ContentNotFoundException:  Content Record is not found by ID [86e02cc1-dc1e-4fcf-b3b8-960628d705f6]
+	at com.mtvi.osiris2.api.mongodb.content.env.MongoContentEnvironment.getContentRecord_aroundBody2(MongoContentEnvironment.java:339)
+	at com.mtvi.osiris2.api.mongodb.content.env.MongoContentEnvironment.getContentRecord_aroundBody3$advice(MongoContentEnvironment.java:47)
+	at com.mtvi.osiris2.api.mongodb.content.env.MongoContentEnvironment.getContentRecord(MongoContentEnvironment.java:1)
+	at com.mtvi.osiris2.ca.core.service.DefaultContentRecordsService.getIndividualContentRecord(DefaultContentRecordsService.java:163)
+	at com.mtvi.osiris2.ca.core.service.DefaultContentRecordsService.getIndividualContentRecord(DefaultContentRecordsService.java:142)
+	at com.mtvi.osiris2.ca.core.service.DefaultContentRecordsService.getIndividualContentRecord(DefaultContentRecordsService.java:202)
+	... 84 more
+&lt;/description&gt;
+&lt;/error&gt;</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://localhost:12542/uca/v2/content/crx-2218-env-name2-test/86e02cc1-dc1e-4fcf-b3b8-960628d705f6.xml</java.net.URL>
+</httpSample>
+<sample t="161" lt="143" ts="1365187789786" s="true" lb="Test cases" rc="200" rm="Number of samples in transaction : 10, number of failing samples : 0" tn="Thread Group 1-1" dt="" de="" by="23723" hn="Dzmitrys-MacBook-Pro.local">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String"/>
+  <responseFile class="java.lang.String"></responseFile>
+</sample>
+<httpSample t="5" lt="5" ts="1365187789947" s="true" lb="Remove CR" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" de="" by="240" hn="Dzmitrys-MacBook-Pro.local">
+  <assertionResult>
+    <name>Response Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Powered-By: Servlet 2.4; JBoss-4.2.3.GA (build: SVNTag=JBoss_4_2_3_GA date=200807181417)/JBossWeb-2.0
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Date: Fri, 05 Apr 2013 18:49:49 GMT
+</responseHeader>
+  <requestHeader class="java.lang.String">X-Published-By: auto-test
+X-Processed-By: auto-test
+Content-Type: text/xml
+</requestHeader>
+  <responseData class="java.lang.String"></responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">DELETE</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://localhost:12542/ucsa/v2/mgid/jcr/content/crx-2218-env-name-test/86e02cc1-dc1e-4fcf-b3b8-960628d705f6</java.net.URL>
+</httpSample>
+<sample t="6" lt="5" ts="1365187789947" s="true" lb="Postconditions" rc="200" rm="Number of samples in transaction : 1, number of failing samples : 0" tn="Thread Group 1-1" dt="" de="" by="240" hn="Dzmitrys-MacBook-Pro.local">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String"/>
+  <responseFile class="java.lang.String"></responseFile>
+</sample>
+<sample t="167" lt="148" ts="1365187789786" s="true" lb="CRX-2218 Thread Group" rc="200" rm="Number of samples in transaction : 11, number of failing samples : 0" tn="Thread Group 1-1" dt="" de="" by="23963" hn="Dzmitrys-MacBook-Pro.local">
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String"/>
+  <responseFile class="java.lang.String"></responseFile>
+</sample>
+</testResults>

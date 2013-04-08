@@ -1,6 +1,6 @@
 package com.mtvi.arc.runner;
 
-import com.mtvi.arc.domain.SystemTestResult;
+import com.mtvi.arc.domain.result.SystemTestResult;
 
 import java.util.Date;
 import java.util.LinkedHashSet;
@@ -39,4 +39,5 @@ public class ExecutionResult {
     public Date getStartDate() {
         return startDate;
     }
+
 }

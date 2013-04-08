@@ -1,4 +1,7 @@
-package com.mtvi.arc.domain;
+package com.mtvi.arc.domain.result;
+
+import com.mtvi.arc.domain.SystemTest;
+import org.apache.commons.lang.time.DurationFormatUtils;
 
 import java.io.File;
 import java.util.Date;
@@ -16,7 +19,7 @@ public class SystemTestResult {
 
     private final File rawResult;
 
-    private SystemTestResultExplanation explain;
+    private DetailedResult explain;
 
     public SystemTestResult(SystemTest test, Date startDate, Date endDate, File rawResult) {
         if (test == null || startDate == null) {
@@ -29,13 +32,13 @@ public class SystemTestResult {
         this.rawResult = rawResult;
     }
 
-    public void bindResultExplanation(SystemTestResultExplanation explanation) {
+    public void bindResultExplanation(DetailedResult explanation) {
         if (explanation != null) {
             this.explain = explanation;
         }
     }
 
-    public SystemTestResultExplanation getExplain() {
+    public DetailedResult getExplain() {
         return explain;
     }
 
@@ -53,6 +56,19 @@ public class SystemTestResult {
 
     public File getRawResult() {
         return rawResult;
+    }
+
+    public boolean isSuccess() {
+        for (SampleResult sample : explain.getSamples()) {
+            if (!sample.isSuccess()) {
+                return Boolean.FALSE;
+            }
+        }
+        return Boolean.TRUE;
+    }
+
+    public String getExecutionTime() {
+        return DurationFormatUtils.formatDuration(endDate.getTime() - startDate.getTime(), "mm:ss.SSS");
     }
 
 }
