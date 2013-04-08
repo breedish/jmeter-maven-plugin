@@ -104,9 +104,19 @@ public class SystemTestMojo extends AbstractMojo {
 
             LOG.info("Building report...");
             getReportBuilder().buildReport(result, config);
+
+            LOG.info("Verify results...");
+            verify(result);
         } catch (Throwable e) {
             LOG.error("Error during build:", e);
             throw new MojoExecutionException("Error during system test execution.", e);
+        }
+    }
+
+    private void verify(ExecutionResult result) throws TestExecutionException {
+        if (!result.isSuccess()) {
+
+            throw new TestExecutionException("Build failure. Some System tests failed. See report for detailed info");
         }
     }
 

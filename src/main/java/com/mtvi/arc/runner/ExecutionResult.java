@@ -40,4 +40,13 @@ public class ExecutionResult {
         return startDate;
     }
 
+    public boolean isSuccess() {
+        for (SystemTestResult testResult : executionResults) {
+            if (!testResult.isSuccess()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 }
