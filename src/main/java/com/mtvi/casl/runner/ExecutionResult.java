@@ -3,7 +3,6 @@ package com.mtvi.casl.runner;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Sets;
 import com.mtvi.casl.domain.result.SystemTestResult;
-import com.sun.istack.internal.Nullable;
 
 import java.util.Collections;
 import java.util.Date;
@@ -56,7 +55,7 @@ public class ExecutionResult {
     public Set<SystemTestResult> getFailedTests() {
         return Collections.unmodifiableSet(Sets.filter(executionResults, new Predicate<SystemTestResult>() {
             @Override
-            public boolean apply(@Nullable SystemTestResult test) {
+            public boolean apply(SystemTestResult test) {
                 return !test.isSuccess();
             }
         }));

@@ -23,7 +23,7 @@ public class JMeterResultProcessorTest {
             new SystemTest("test", new File("test.jmx")), new Date(), new Date(), testResult);
         DetailedResult detailedResult = new JMeterResultProcessor.JAXBJMeterTestResultParser().parse(result);
 
-        Assert.assertEquals(detailedResult.getSamples().size(), 10);
+        Assert.assertEquals(detailedResult.getSamples().size(), 87);
         System.out.println(detailedResult);
     }
 
