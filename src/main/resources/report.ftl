@@ -89,7 +89,7 @@
                             <th>#</th>
                             <th>System Test</th>
                             <th>Execution Time</th>
-                            <th>Calls</th>
+                            <th>Calls / Failed Calls (${result.failedSamples})</th>
                             <th>Passed</th>
                         </tr>
                     </thead>
@@ -101,7 +101,7 @@
                                     <a href="#${test.test.name?replace(".","_")}" data-toggle="modal">${test.test.name}</a>
                                 </td>
                                 <td>${test.executionTime}</td>
-                                <td>${test.explain.samples?size}</td>
+                                <td>${test.explain.samples?size} / ${test.explain.failedSamples}</td>
                                 <td><#if test.success><span class="label label-success">PASSED</span><#else><span class="label label-important">FAILED</span></#if></td>
                             </tr>
                         </#list>
@@ -114,16 +114,17 @@
                         <div id="${test.test.name?replace(".","_")}" class="modal hide fade" style="width:90%;top:5%;margin-left:0px;left:5%;" tabindex="-1" role="dialog" aria-labelledby="modal_header_${test.test.name?replace(".","_")}_${test_index}" aria-hidden="true">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                <h3 id="modal_header_${test.test.name?replace(".","_")}_${test_index}"><b>${test.test.name}</b> Details</h3>
+                                <h3 id="modal_header_${test.test.name?replace(".","_")}_${test_index}"><b>${test.test.name}</b> Details <a href="#" class="collapse_all btn btn-small pull-right" style="margin-right:20px;"><i class="icon-align-justify"></i><b>Collapse All</b></a></h3>
+
                             </div>
                             <div class="modal-body" style="max-height:600px">
                                 <ul class="nav nav-tabs nav-stacked">
                                 <#list test.explain.samples as sample>
                                     <li>
                                         <a data-toggle="collapse" href="#explain_call_detailed_${test.test.name?replace(".","_")}_${sample_index+1}" >${sample_index+1}. ${sample.label} <#if sample.success><span class="label label-success">PASSED</span><#else><span class="label label-important">FAILED</span></#if></a>
-                                        <div class="in" style="padding-left:50px" id="explain_call_detailed_${test.test.name?replace(".","_")}_${sample_index+1}">
+                                        <div class="collapse" style="padding-left:50px" id="explain_call_detailed_${test.test.name?replace(".","_")}_${sample_index+1}">
                                             <ul class="nav nav-tabs">
-                                                <li><a href="#explain_call_detailed_${test.test.name?replace(".","_")}_${sample_index+1}_request" data-toggle="tab">Request</a></li>
+                                                <li class="active"><a href="#explain_call_detailed_${test.test.name?replace(".","_")}_${sample_index+1}_request" data-toggle="tab">Request</a></li>
                                                 <li><a href="#explain_call_detailed_${test.test.name?replace(".","_")}_${sample_index+1}_response" data-toggle="tab">Response</a></li>
                                             </ul>
                                             <div class="tab-content">
@@ -162,7 +163,7 @@
                                                         <br />${sample.responseHeaders!}
                                                     </pre>
                                                     Response:
-                                                    <pre class="prettyprint" style="white-space: pre;">
+                                                    <pre class="prettyprint <#if sample.isJSONResponse()>code-json</#if>" style="white-space: pre;">
                                                         <br />${sample.responseData?html}
                                                     </pre>
 
@@ -214,8 +215,18 @@
         <script>
             $(function() {
                 $(".tablesorter").tablesorter();
-                //$(".collapse").collapse();
+                $(".collapse").collapse({toggle: false});
+
+                $(".collapse_all").bind("click", function(e){
+                    $(".collapse").collapse('hide')
+                });
+
+                $(".code-json").each(function(item) {
+                    $(this).html(formatJson($(this).text()));
+                });
             })
+
+            function repeat(s,count){return new Array(count+1).join(s);}function formatJson(json){var i=0,il=0,tab="    ",newJson="",indentLevel=0,inString=false,currentChar=null;for(i=0,il=json.length;i<il;i+=1){currentChar=json.charAt(i);switch(currentChar){case'{':case'[':if(!inString){newJson+=currentChar+"\n"+repeat(tab,indentLevel+1);indentLevel+=1;}else{newJson+=currentChar;}break;case'}':case']':if(!inString){indentLevel-=1;newJson+="\n"+repeat(tab,indentLevel)+currentChar;}else{newJson+=currentChar;}break;case',':if(!inString){newJson+=",\n"+repeat(tab,indentLevel);}else{newJson+=currentChar;}break;case':':if(!inString){newJson+=": ";}else{newJson+=currentChar;}break;case' ':case"\n":case"\t":if(inString){newJson+=currentChar;}break;case'"':if(i>0&&json.charAt(i-1)!=='\\'){inString=!inString;}newJson+=currentChar;break;default:newJson+=currentChar;break;}}return newJson;}
         </script>
 
     </body>
