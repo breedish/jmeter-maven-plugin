@@ -12,12 +12,21 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "httpSample")
 public class AssertionResult {
 
+    /**
+     * Assertion description.
+     */
     @XmlElement(name = "name")
     private String name;
 
+    /**
+     * Assertion failure flag.
+     */
     @XmlElement(name = "failure")
     private boolean failure;
 
+    /**
+     * Assertion error flag.
+     */
     @XmlElement(name = "error")
     private boolean error;
 

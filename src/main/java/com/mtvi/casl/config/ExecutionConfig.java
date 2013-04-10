@@ -10,18 +10,46 @@ import java.util.Map;
  */
 public class ExecutionConfig {
 
+    /**
+     * Tests source path.
+     */
     private final File sourcePath;
 
+    /**
+     * JMeter home.
+     */
     private final File executorHome;
 
+    /**
+     * Results folder path.
+     */
     private final File resultsPath;
 
+    /**
+     * Custom system properties for plugin.
+     */
     private final Map<String, String> systemProperties;
 
+    /**
+     * Custom JMeter properties.
+     */
     private final Map<String, String> jmeterProperties;
 
+    /**
+     * Flag to show JMeter output by default.
+     */
     private boolean showOutput;
 
+    /**
+     * Constructor.
+     *
+     * @param sourcePath - source path.
+     * @param executorHome - executor home.
+     * @param resultsPath - resultsPath.
+     * @param systemProperties - systemProperties.
+     * @param jmeterProperties - JMeter properties.
+     * @param showOutput - show output flag.
+     */
     public ExecutionConfig(File sourcePath, File executorHome, File resultsPath,
         Map<String, String> systemProperties, Map<String, String> jmeterProperties, boolean showOutput) {
         if (sourcePath == null || executorHome == null || resultsPath == null) {

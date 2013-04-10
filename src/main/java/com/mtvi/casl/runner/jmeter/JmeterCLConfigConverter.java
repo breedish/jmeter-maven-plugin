@@ -3,7 +3,7 @@ package com.mtvi.casl.runner.jmeter;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.mtvi.casl.config.ExecutionConfig;
-import com.mtvi.casl.domain.SystemTest;
+import com.mtvi.casl.domain.SystemTestDefinition;
 import org.apache.commons.collections.MapUtils;
 
 import java.io.File;
@@ -17,6 +17,9 @@ import java.util.Set;
  */
 public class JmeterCLConfigConverter {
 
+    /**
+     * Predefined JMETER Options that should be turned on by default.
+     */
     private static final Set<String> PREDEFINED_TURNED_ON_OPTIONS = ImmutableSet.of(
         "jmeter.save.saveservice.data_type", "jmeter.save.saveservice.label",
         "jmeter.save.saveservice.response_code", "jmeter.save.saveservice.response_data",
@@ -31,10 +34,20 @@ public class JmeterCLConfigConverter {
         "jmeter.save.saveservice.hostname", "jmeter.save.saveservice.print_field_names"
     );
 
+    /**
+     * Custom JMETER options.
+     */
     private static final Map<String, String> PREDEFINED_OPTIONS = ImmutableMap.
             of("jmeter.save.saveservice.assertion_results", "all");
 
-    public String[] prepareConfig(ExecutionConfig config, SystemTest test) {
+    /**
+     * Prepares config for execution of system test for JMeter executable.
+     *
+     * @param config - execution config.
+     * @param test - system test to run.
+     * @return - array of JMeter options.
+     */
+    public String[] prepareConfig(ExecutionConfig config, SystemTestDefinition test) {
         List<String> options = new LinkedList<String>();
         addPredefinedOptions(options);
 

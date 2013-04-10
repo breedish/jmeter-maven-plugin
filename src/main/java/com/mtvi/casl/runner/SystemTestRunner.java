@@ -7,6 +7,11 @@ import com.mtvi.casl.domain.TestExecutionException;
  */
 public interface SystemTestRunner {
 
+    /**
+     * Execute system tests.
+     * @return - execution result.
+     * @throws TestExecutionException in case of error during execution.
+     */
     ExecutionResult execute() throws TestExecutionException;
 
 }

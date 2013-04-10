@@ -1,6 +1,6 @@
 package com.mtvi.casl.processors;
 
-import com.mtvi.casl.domain.SystemTest;
+import com.mtvi.casl.domain.SystemTestDefinition;
 import com.mtvi.casl.domain.result.DetailedResult;
 import com.mtvi.casl.domain.result.SystemTestResult;
 import junit.framework.Assert;
@@ -20,7 +20,7 @@ public class JMeterResultProcessorTest {
         File testResult = new File(JMeterResultProcessorTest.class.getResource("/CRX.jmx.jtl").toURI());
 
         SystemTestResult result = new SystemTestResult(
-            new SystemTest("test", new File("test.jmx")), new Date(), new Date(), testResult);
+            new SystemTestDefinition("test", new File("test.jmx")), new Date(), new Date(), testResult);
         DetailedResult detailedResult = new JMeterResultProcessor.JAXBJMeterTestResultParser().parse(result);
 
         Assert.assertEquals(detailedResult.getSamples().size(), 87);
@@ -33,7 +33,7 @@ public class JMeterResultProcessorTest {
         File testResult = new File(JMeterResultProcessorTest.class.getResource("/CRX_with_parent_sample.jmx.jtl").toURI());
 
         SystemTestResult result = new SystemTestResult(
-                new SystemTest("test", new File("test.jmx")), new Date(), new Date(), testResult);
+                new SystemTestDefinition("test", new File("test.jmx")), new Date(), new Date(), testResult);
         DetailedResult detailedResult = new JMeterResultProcessor.JAXBJMeterTestResultParser().parse(result);
 
         Assert.assertEquals(detailedResult.getSamples().size(), 10);

@@ -9,6 +9,13 @@ import com.mtvi.casl.runner.ExecutionResult;
  */
 public interface ResultProcessor {
 
+    /**
+     * Processes raw JMeter results.
+     *
+     * @param executionResult - execution result.
+     * @param config - config.
+     * @throws TestExecutionException - in case of parsing error.
+     */
     void process(ExecutionResult executionResult, ExecutionConfig config) throws TestExecutionException;
 
 }

@@ -18,53 +18,119 @@ import java.util.regex.Pattern;
 @XmlRootElement(name = "httpSample")
 public class SampleResult {
 
+    /**
+     * JSON Response Content Type Pattern.
+     */
     private static final Pattern RESPONSE_JSON_TYPE_PATTERN = Pattern.compile("(.*)?Content-Type:(.*)?/json(.*)?", Pattern.MULTILINE);
 
+    /**
+     * Flag if sample's call was successful.
+     */
     @XmlAttribute(name = "s")
     private boolean success;
 
+    /**
+     * Label for sample.
+     */
     @XmlAttribute(name = "lb")
     private String label;
 
+    /**
+     * Host Name.
+     */
     @XmlAttribute(name = "hn")
     private String hostName;
 
+    /**
+     * Exact URL that sample is executing.
+     */
     @XmlElement(name = "java.net.URL")
     private String url;
 
+    /**
+     * Query string.
+     */
     @XmlElement(name = "queryString")
     private String queryString;
 
+    /**
+     * HTTP Execution Method.
+     */
     @XmlElement(name = "method")
     private String method;
 
-    @XmlElement(name = "")
+    /**
+     * Request Headers provided by JMeter.
+     */
+    @XmlElement(name = "requestHeader")
     private String requestHeaders;
 
+    /**
+     * Response code.
+     */
     @XmlAttribute(name = "rc")
     private String responseCode;
 
+    /**
+     * Response message.
+     */
     @XmlAttribute(name = "rm")
     private String responseMessage;
 
+    /**
+     * Response Headers.
+     */
     @XmlElement(name = "responseHeader")
     private String responseHeaders;
 
+    /**
+     * Response Data.
+     */
     @XmlElement(name = "responseData")
     private String responseData;
 
+    /**
+     * Response File.
+     */
     @XmlElement(name = "responseFile")
     private String responseFile;
 
+    /**
+     * Size of response.
+     */
     @XmlAttribute(name = "by")
     private int bytesSize;
 
+    /**
+     * List of assertions.
+     */
     @XmlElement(name = "assertionResult")
     private Set<AssertionResult> assertions;
 
+    /**
+     * Default constructor..
+     */
     public SampleResult() {
+        //Do nothing.
     }
 
+    /**
+     * Constructor.
+     *
+     * @param success - success flag.
+     * @param hostName - host name.
+     * @param url - url.
+     * @param queryString - query string.
+     * @param method - method.
+     * @param requestHeaders - request headers.
+     * @param responseCode - response code.
+     * @param responseMessage - response message.
+     * @param responseHeaders - response headers.
+     * @param responseData - response data.
+     * @param responseFile - response file.
+     * @param bytesSize - bytes size.
+     * @param assertions - assertions.
+     */
     public SampleResult(boolean success, String hostName, String url, String queryString,
         String method, String requestHeaders, String responseCode,
         String responseMessage, String responseHeaders, String responseData,
@@ -203,6 +269,9 @@ public class SampleResult {
             .append("success", this.success).append("label", this.label).toString();
     }
 
+    /**
+     * @return true if response of JSON content type.
+     */
     public boolean isJSONResponse() {
         if (this.responseHeaders != null) {
             Matcher matcher = RESPONSE_JSON_TYPE_PATTERN.matcher(this.responseHeaders);

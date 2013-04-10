@@ -9,6 +9,13 @@ import java.util.Set;
  */
 public interface SystemTestManager {
 
-    Set<SystemTest> findSystemTests(ExecutionConfig config) throws TestExecutionException;
+    /**
+     * Find Registered System Tests.
+     *
+     * @param config - config.
+     * @return set of found tests.
+     * @throws TestExecutionException - if error occurs during find operation.
+     */
+    Set<SystemTestDefinition> findSystemTests(ExecutionConfig config) throws TestExecutionException;
 
 }

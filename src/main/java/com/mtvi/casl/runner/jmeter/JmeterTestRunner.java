@@ -1,7 +1,7 @@
 package com.mtvi.casl.runner.jmeter;
 
 import com.mtvi.casl.config.ExecutionConfig;
-import com.mtvi.casl.domain.SystemTest;
+import com.mtvi.casl.domain.SystemTestDefinition;
 import com.mtvi.casl.domain.SystemTestManager;
 import com.mtvi.casl.domain.TestExecutionException;
 import com.mtvi.casl.domain.result.SystemTestResult;
@@ -20,14 +20,32 @@ import java.util.Set;
  */
 public class JmeterTestRunner implements SystemTestRunner {
 
+    /**
+     * LOGGER.
+     */
     private static final Logger LOGGER = LoggerFactory.getLogger(JmeterTestRunner.class);
 
+    /**
+     * Execution Config.
+     */
     private final ExecutionConfig config;
 
+    /**
+     * Test Executor.
+     */
     private final Executor testExecutor;
 
+    /**
+     * System Test Manager.
+     */
     private final SystemTestManager systemTestManager;
 
+    /**
+     * Constructor.
+     *
+     * @param config - execution config.
+     * @param testManager - system test manager.
+     */
     public JmeterTestRunner(ExecutionConfig config, SystemTestManager testManager) {
         this.config = config;
         this.testExecutor = new DefaultJmeterExecutor(config);
@@ -36,20 +54,20 @@ public class JmeterTestRunner implements SystemTestRunner {
 
     @Override
     public ExecutionResult execute() throws TestExecutionException {
-        Set<SystemTest> suite = systemTestManager.findSystemTests(config);
+        Set<SystemTestDefinition> suite = systemTestManager.findSystemTests(config);
 
         printTestSuite(suite);
 
         return doExecution(suite);
     }
 
-    protected ExecutionResult doExecution(Set<SystemTest> suite) {
+    protected ExecutionResult doExecution(Set<SystemTestDefinition> suite) {
         testExecutor.initExecutor();
         ExecutionResult executionResult = new ExecutionResult();
 
         long startTime = System.currentTimeMillis();
         int order = 1;
-        for (SystemTest test : suite) {
+        for (SystemTestDefinition test : suite) {
             try {
                 LOGGER.info("{}/{} Execution of \"{}\" started.", order, suite.size(), test.getName());
                 SystemTestResult result = testExecutor.execute(test);
@@ -70,10 +88,10 @@ public class JmeterTestRunner implements SystemTestRunner {
         return executionResult;
     }
 
-    private void printTestSuite(Set<SystemTest> runSuite) {
+    private void printTestSuite(Set<SystemTestDefinition> runSuite) {
         LOGGER.info("System Test Execution Sequence:");
         int order = 0;
-        for (SystemTest test : runSuite) {
+        for (SystemTestDefinition test : runSuite) {
             LOGGER.info("{}. {} \t {}", ++order, test.getName(), test.getPath().getAbsolutePath());
         }
     }

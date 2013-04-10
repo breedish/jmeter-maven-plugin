@@ -15,8 +15,15 @@ import javax.xml.bind.Unmarshaller;
  */
 public class JMeterResultProcessor implements ResultProcessor {
 
+    /**
+     * Result Parser.
+     */
     private final JMeterTestResultParser parser;
 
+    /**
+     * Default Constructor.
+     * @throws TestExecutionException - in case of error during initialization.
+     */
     public JMeterResultProcessor() throws TestExecutionException {
         this.parser = new JAXBJMeterTestResultParser();
     }
@@ -32,14 +39,23 @@ public class JMeterResultProcessor implements ResultProcessor {
         return parser.parse(result);
     }
 
+    /**
+     * Parser interface.
+     */
     interface JMeterTestResultParser {
 
         DetailedResult parse(SystemTestResult systemTestResult) throws TestExecutionException;
 
     }
 
+    /**
+     * Default JAXB Parser Implementation.
+     */
     static class JAXBJMeterTestResultParser implements JMeterTestResultParser {
 
+        /**
+         * Unmarshaller.
+         */
         private final Unmarshaller unmarshaller;
 
         JAXBJMeterTestResultParser() throws TestExecutionException {

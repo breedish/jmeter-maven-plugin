@@ -3,6 +3,7 @@ package com.mtvi.casl.mojo;
 import com.mtvi.casl.config.ExecutionConfig;
 import com.mtvi.casl.domain.DefaultSystemTestManager;
 import com.mtvi.casl.domain.TestExecutionException;
+import com.mtvi.casl.domain.result.SystemTestResult;
 import com.mtvi.casl.processors.JMeterResultProcessor;
 import com.mtvi.casl.processors.ResultProcessor;
 import com.mtvi.casl.report.DefaultReportBuilder;
@@ -40,7 +41,7 @@ public class SystemTestMojo extends AbstractMojo {
      * @required
      * @readonly
      */
-    protected MavenProject mavenProject;
+    private MavenProject mavenProject;
 
     /**
      * Path where all source test files are located.
@@ -48,7 +49,7 @@ public class SystemTestMojo extends AbstractMojo {
      * @parameter
      * @required
      */
-    protected File sources;
+    private File sources;
 
     /**
      * Path under which JMX files are stored.
@@ -56,7 +57,7 @@ public class SystemTestMojo extends AbstractMojo {
      * @parameter
      * @required
      */
-    protected File jmeterHome;
+    private File jmeterHome;
 
     /**
      * Path under which JMX files are stored.
@@ -64,28 +65,28 @@ public class SystemTestMojo extends AbstractMojo {
      * @parameter
      * @required
      */
-    protected File resultsDir;
+    private File resultsDir;
 
     /**
      * Suppress JMeter output.
      *
      * @parameter default-value="false"
      */
-    protected boolean showOutput;
+    private boolean showOutput;
 
     /**
      * JMeter properties set for the test run.
      * .
      * @parameter
      */
-    protected Map<String, String> propertiesJMeter;
+    private Map<String, String> propertiesJMeter;
 
     /**
      * (Java) System properties set for the test run.
      *
      * @parameter
      */
-    protected Map<String, String> propertiesSystem;
+    private Map<String, String> propertiesSystem;
 
 
     @Override
@@ -115,8 +116,14 @@ public class SystemTestMojo extends AbstractMojo {
 
     private void verify(ExecutionResult result) throws TestExecutionException {
         if (!result.isSuccess()) {
+            StringBuilder errorMessage = new StringBuilder("Build failure. See report for detailed info. ");
+            errorMessage.append("Failed tests ").append(result.getFailedTests().size()).append(": \n");
 
-            throw new TestExecutionException("Build failure. Some System tests failed. See report for detailed info");
+            for (SystemTestResult failedTest : result.getFailedTests()) {
+                errorMessage.append(failedTest.getTest().getName()).append("\n");
+            }
+
+            throw new TestExecutionException(errorMessage.toString());
         }
     }
 

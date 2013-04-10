@@ -1,7 +1,7 @@
 package com.mtvi.casl.report;
 
 import com.mtvi.casl.config.ExecutionConfig;
-import com.mtvi.casl.domain.SystemTest;
+import com.mtvi.casl.domain.SystemTestDefinition;
 import com.mtvi.casl.domain.result.SystemTestResult;
 import com.mtvi.casl.processors.JMeterResultProcessor;
 import com.mtvi.casl.processors.JMeterResultProcessorTest;
@@ -25,7 +25,7 @@ public class DefaultReportBuilderTest {
         File testResult = new File(JMeterResultProcessorTest.class.getResource("/CRX.jmx.jtl").toURI());
 
         SystemTestResult result = new SystemTestResult(
-                new SystemTest("test", new File("test.jmx")), new Date(), new Date(), testResult);
+                new SystemTestDefinition("test", new File("test.jmx")), new Date(), new Date(), testResult);
 
         ResultProcessor resultProcessor = new JMeterResultProcessor();
 

@@ -17,6 +17,9 @@ import java.util.Map;
  */
 public class DefaultReportBuilder implements ReportBuilder {
 
+    /**
+     * System Test Report name.
+     */
     private static final String REPORT_NAME = "SystemTestReport.html";
 
     @Override
@@ -27,7 +30,6 @@ public class DefaultReportBuilder implements ReportBuilder {
             Template template = cfg.getTemplate("report.ftl");
 
             Map<String, Object> data = new HashMap<String, Object>();
-            data.put("message", "Hello World!");
             data.put("config", config);
             data.put("result", result);
 

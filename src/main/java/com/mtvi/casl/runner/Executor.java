@@ -1,6 +1,6 @@
 package com.mtvi.casl.runner;
 
-import com.mtvi.casl.domain.SystemTest;
+import com.mtvi.casl.domain.SystemTestDefinition;
 import com.mtvi.casl.domain.result.SystemTestResult;
 
 /**
@@ -8,7 +8,7 @@ import com.mtvi.casl.domain.result.SystemTestResult;
  */
 public interface Executor {
 
-    SystemTestResult execute(SystemTest test) throws Exception;
+    SystemTestResult execute(SystemTestDefinition test) throws Exception;
 
     void initExecutor();
 

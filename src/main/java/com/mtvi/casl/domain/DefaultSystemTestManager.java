@@ -29,27 +29,33 @@ public class DefaultSystemTestManager implements SystemTestManager {
     }
 
     @Override
-    public Set<SystemTest> findSystemTests(ExecutionConfig config) throws TestExecutionException {
-        Set<SystemTest> tests = Sets.newTreeSet(new Comparator<SystemTest>() {
+    public Set<SystemTestDefinition> findSystemTests(ExecutionConfig config) throws TestExecutionException {
+        Set<SystemTestDefinition> tests = Sets.newTreeSet(new Comparator<SystemTestDefinition>() {
             @Override
-            public int compare(SystemTest test1, SystemTest test2) {
+            public int compare(SystemTestDefinition test1, SystemTestDefinition test2) {
                 return test1.getName().compareTo(test2.getName());
             }
         });
 
         for (File testSrc : this.systemTestScanner.scan(config.getSourcePath().getAbsolutePath())) {
-            tests.add(new SystemTest(testSrc.getName(), testSrc));
+            tests.add(new SystemTestDefinition(testSrc.getName(), testSrc));
         }
 
         return tests;
     }
 
+    /**
+     * System Test Scanner.
+     */
     interface SystemTestScanner {
 
         Collection<File> scan(String srcPath) throws TestExecutionException;
 
     }
 
+    /**
+     * By ExtensionSystem Test Scanner.
+     */
     class ByExtensionSystemTestScanner implements SystemTestScanner {
 
         /**

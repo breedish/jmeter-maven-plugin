@@ -2,7 +2,7 @@ package com.mtvi.casl.runner.jmeter;
 
 import com.google.common.io.NullOutputStream;
 import com.mtvi.casl.config.ExecutionConfig;
-import com.mtvi.casl.domain.SystemTest;
+import com.mtvi.casl.domain.SystemTestDefinition;
 import com.mtvi.casl.domain.result.SystemTestResult;
 import com.mtvi.casl.runner.Executor;
 import org.apache.jmeter.JMeter;
@@ -22,19 +22,41 @@ import java.util.concurrent.TimeUnit;
  */
 public class DefaultJmeterExecutor implements Executor {
 
+    /**
+     * JMeter parameters converter.
+     */
     private final JmeterCLConfigConverter configConverter = new JmeterCLConfigConverter();
 
+    /**
+     * Execution config.
+     */
     private final ExecutionConfig config;
 
+    /**
+     * Executable.
+     */
     private final JMeter executable;
 
+    /**
+     * Countdown Latch used for handling output display.
+     */
     private final CountDownLatch latch = new CountDownLatch(1);
 
+    /**
+     * Executor service.
+     */
     private final ExecutorService service;
 
+    /**
+     * Initial output stream.
+     */
     private final PrintStream initialPrintStream = System.out;
 
 
+    /**
+     * Constructor.
+     * @param config - execution config.
+     */
     public DefaultJmeterExecutor(ExecutionConfig config) {
         this.config = config;
         this.executable = new JMeter();
@@ -43,7 +65,8 @@ public class DefaultJmeterExecutor implements Executor {
     }
 
     private void configureJmeterEnvironment() {
-        //empty classpath, JMeter will automatically assemble and add all JARs in #libDir and #libExtDir and add them to the classpath. Otherwise all jars will be in the classpath twice.
+        //empty classpath, JMeter will automatically assemble and add all JARs in
+        // #libDir and #libExtDir and add them to the classpath. Otherwise all jars will be in the classpath twice.
         System.setProperty("java.class.path", "");
         //JMeter uses the system property "user.dir" to set its base working directory
         System.setProperty("user.dir", new File(config.getExecutorHome().getAbsolutePath(), "bin").getAbsolutePath());
@@ -55,7 +78,7 @@ public class DefaultJmeterExecutor implements Executor {
 
 
     @Override
-    public SystemTestResult execute(SystemTest test) throws Exception {
+    public SystemTestResult execute(SystemTestDefinition test) throws Exception {
         Date startDate = new Date();
         executable.start(configConverter.prepareConfig(config, test));
         waitForTestToFinish();
@@ -88,7 +111,7 @@ public class DefaultJmeterExecutor implements Executor {
                 Scanner scanner = new Scanner(System.in);
 
                 boolean showOutput = false;
-                while(latch.getCount() > 0) {
+                while (latch.getCount() > 0) {
                     try {
                         if (scanner.hasNext() && scanner.next().equalsIgnoreCase("o")) {
                             showOutput = !showOutput;

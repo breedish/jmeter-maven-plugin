@@ -5,9 +5,8 @@
         <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
         <script src="http://cdn.jsdelivr.net/jquery/1.9.1/jquery-1.9.1.min.js"></script>
         <script src="http://cdn.jsdelivr.net/tablesorter/2.0.5b/jquery.tablesorter.min.js"></script>
-        <script src="http://cdn.jsdelivr.net/bootstrap/2.3.1/js/bootstrap.js"></script>
+        <script src="http://cdn.jsdelivr.net/bootstrap/2.3.1/js/bootstrap.min.js"></script>
         <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
-        <!--<script src="http://cdn.jsdelivr.net/bootstrap/2.3.1/js/bootstrap-modal.js"></script>-->
     </head>
     <body>
         <style>
@@ -78,7 +77,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </a>
-                        <a class="brand" href="#">System Tests Execution Report ${result.startDate?datetime}<span style="position: relative;top: -10px;" class="label <#if result.success>label-success">PASSED<#else>label-important">FAILED</span></#if></a>
+                        <a class="brand" href="#">System Tests Execution Report for <date>${result.startDate?datetime}</date>.<span style="position: relative;top: -10px;" class="label <#if result.success>label-success">PASSED<#else>label-important">FAILED</span></#if></a>
                     </div>
                 </div>
             </div>
@@ -88,7 +87,7 @@
                         <tr>
                             <th>#</th>
                             <th>System Test</th>
-                            <th>Execution Time</th>
+                            <th>Execution Time. (Total Execution time: ${result.getExecutionTime()})</th>
                             <th>Calls / Failed Calls (${result.failedSamples})</th>
                             <th>Passed</th>
                         </tr>
@@ -214,7 +213,10 @@
         </div>
         <script>
             $(function() {
-                $(".tablesorter").tablesorter();
+                $(".tablesorter").tablesorter({
+                    headers: { 3: { sorter: 'test-stats'}}
+                });
+
                 $(".collapse").collapse({toggle: false});
 
                 $(".collapse_all").bind("click", function(e){
@@ -225,6 +227,22 @@
                     $(this).html(formatJson($(this).text()));
                 });
             })
+
+            $.tablesorter.addParser({
+                id: "test-stats",
+                is: function(s) {
+                    return false;
+                },
+                format: function(s) {
+                    if (s && s!=="") {
+                        var separatorIndex = s.indexOf("/");
+                        var totalCalls = s.substring(0,separatorIndex).trim();
+                        return $.tablesorter.formatFloat(totalCalls);
+                    }
+                    return -1;
+                },
+                type: "numeric"
+            });
 
             function repeat(s,count){return new Array(count+1).join(s);}function formatJson(json){var i=0,il=0,tab="    ",newJson="",indentLevel=0,inString=false,currentChar=null;for(i=0,il=json.length;i<il;i+=1){currentChar=json.charAt(i);switch(currentChar){case'{':case'[':if(!inString){newJson+=currentChar+"\n"+repeat(tab,indentLevel+1);indentLevel+=1;}else{newJson+=currentChar;}break;case'}':case']':if(!inString){indentLevel-=1;newJson+="\n"+repeat(tab,indentLevel)+currentChar;}else{newJson+=currentChar;}break;case',':if(!inString){newJson+=",\n"+repeat(tab,indentLevel);}else{newJson+=currentChar;}break;case':':if(!inString){newJson+=": ";}else{newJson+=currentChar;}break;case' ':case"\n":case"\t":if(inString){newJson+=currentChar;}break;case'"':if(i>0&&json.charAt(i-1)!=='\\'){inString=!inString;}newJson+=currentChar;break;default:newJson+=currentChar;break;}}return newJson;}
         </script>
